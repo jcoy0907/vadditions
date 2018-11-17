@@ -1,7 +1,7 @@
 README
 ======
-# Vadditions
-A Minecraft datapack focussed on customizing, not altering, the vanilla game.
+
+- Thank you for installing Vadditions (Vanilla Additions) into your Minecraft world!
 
 Installation
 ------------
@@ -16,8 +16,6 @@ Contributing
 ------------
 
 - Want to help the Vadditions team develop the pack? The easiest way to do this is to contact Andante on either Discord `(Andante#7922)` or Twitter `(@AndanteTweets)`. There's also a Vadditions datapack discord server somewhere, though I can't find a link for that... strange. Oh yeah! It's on the wiki, `vadditions-datapack.wikia.com`
-- We are in need of translators! See this text and think you could do it? Message me on Discord, `Andante#7922`!
-- Anyone good at textures? Anyone? It'd be nice to have a 32x version of the Vadditions resources for the community to have, so if you'd like to do that message me on Discord with your finished result, `Andante#7922`!
 
 CREDITS
 -------
