@@ -1,0 +1,4 @@
+#particle minecraft:block minecraft:crafting_table ~ ~1 ~ .1 .25 .1 .05 30 force @a
+data remove entity @e[type=minecraft:item,sort=nearest,limit=1,nbt={Item:{tag:{display:{Name:"{\"translate\":\"block.vadditions.customcrafter.basic\"}"}}}}] Item.tag.display
+summon minecraft:area_effect_cloud ~ ~ ~ {Passengers:[{id:"minecraft:item",Item:{id:"minecraft:crafting_table",Count:1b,tag:{display:{Name:"{\"translate\":\"item.minecraft.crafting_table.slightly_damaged\"}"}}}},{id:"minecraft:item",Item:{id:"minecraft:cobblestone",Count:4b}},{id:"minecraft:item",Item:{id:"minecraft:iron_ingot",Count:3b}},{id:"minecraft:item",Item:{id:"minecraft:redstone",Count:1b}}]}
+kill @s[type=!minecraft:player]

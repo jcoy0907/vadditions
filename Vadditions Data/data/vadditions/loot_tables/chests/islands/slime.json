@@ -1,0 +1,59 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 2,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:arrow",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                        }
+                    ],
+                    "weight": 30
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:slime_ball",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                        }
+                    ],
+                    "weight": 30
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:bow",
+                    "weight": 30
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:slime_block",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                        }
+                    ],
+                    "weight": 10
+                }
+            ]
+        }
+    ]
+}

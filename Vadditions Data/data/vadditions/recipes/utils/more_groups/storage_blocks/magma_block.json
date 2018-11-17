@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "group": "storage_blocks",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:magma_cream"
+    }
+  },
+  "result": {
+    "item": "minecraft:magma_block"
+  }
+}

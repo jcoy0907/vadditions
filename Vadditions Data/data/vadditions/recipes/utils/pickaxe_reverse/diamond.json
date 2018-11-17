@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shaped",
+  "group": "pickaxe_reverse",
+  "pattern": [
+    "P  ",
+    " F "
+
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "F": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 1
+  }
+}

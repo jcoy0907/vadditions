@@ -1,0 +1,14 @@
+{
+  "mob/white_castle_master/ambient": {
+    "category": "ambient",
+    "sounds": [
+      {"name":"vadditions:mob/white_castle_master/ambient1",
+	  "stream":true},
+      {"name":"vadditions:mob/white_castle_master/ambient2",
+	  "stream":true},
+      {"name":"vadditions:mob/white_castle_master/ambient3",
+	  "stream":true}
+    ],
+    "subtitle": "subtitles.vadditions.white_castle_master.ambient"
+  }
+}

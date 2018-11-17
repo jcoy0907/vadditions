@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shaped",
+  "group": "pickaxe_reverse",
+  "pattern": [
+    "P  ",
+    " F "
+
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:wooden_pickaxe"
+    },
+    "F": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "minecraft:stick",
+    "count": 2
+  }
+}

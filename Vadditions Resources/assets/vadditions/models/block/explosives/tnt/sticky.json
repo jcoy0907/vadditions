@@ -1,0 +1,25 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "particle": "vadditions:block/explosives/tnt/sticky_side",
+        "down": "vadditions:block/explosives/tnt/sticky_bottom",
+        "up": "vadditions:block/explosives/tnt/sticky_top",
+        "north": "vadditions:block/explosives/tnt/sticky_side",
+        "east": "vadditions:block/explosives/tnt/sticky_side",
+        "south": "vadditions:block/explosives/tnt/sticky_side",
+        "west": "vadditions:block/explosives/tnt/sticky_side"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#down", "cullface": "down" },
+                "up":    { "texture": "#up", "cullface": "up" },
+                "north": { "texture": "#north", "cullface": "north" },
+                "south": { "texture": "#south", "cullface": "south" },
+                "west":  { "texture": "#west", "cullface": "west" },
+                "east":  { "texture": "#east", "cullface": "east" }
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "parent": "vadditions:technical_chain",
+  "display": {
+    "icon": {
+      "item": "minecraft:red_bed"
+    },
+    "title": {
+      "translate": "advancements.vadditions.technical.sleeping.title"
+    },
+    "description": {
+      "translate": "advancements.vadditions.technical.sleeping.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": "true"
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

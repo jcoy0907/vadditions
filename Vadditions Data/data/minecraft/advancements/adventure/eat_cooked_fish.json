@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:cooked_cod"
+    },
+    "title": {
+      "translate": "advancements.vadditions.adventure.eat_fish.title"
+    },
+    "description": {
+      "translate": "advancements.vadditions.adventure.eat_fish.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+      "minecraft:cooked_cod": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "minecraft:cooked_cod"
+        }
+      }
+    },
+      "minecraft:cooked_salmon": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "minecraft:cooked_salmon"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "minecraft:cooked_cod",
+      "minecraft:cooked_salmon"
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shaped",
+  "group": "pickaxe_reverse",
+  "pattern": [
+    "P  ",
+    " F "
+
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "F": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "minecraft:gold_nugget",
+    "count": 3
+  }
+}

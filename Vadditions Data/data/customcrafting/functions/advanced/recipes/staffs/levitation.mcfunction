@@ -1,0 +1,2 @@
+setblock ~ ~ ~ minecraft:air replace
+setblock ~ ~ ~ minecraft:dropper[facing=up]{CustomName:"{\"translate\":\"block.vadditions.customcrafter.advanced\"}",LootTable:"customcrafting:advanced/staffs/levitation"}

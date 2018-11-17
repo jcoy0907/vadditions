@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:cooked_cod"
+    },
+    "title": {
+      "translate": "advancements.vadditions.adventure.eat_fish.title"
+    },
+    "description": {
+      "translate": "advancements.vadditions.adventure.eat_fish.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+      "has_advancement": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "has_advancement"
+    ]
+  ]
+}

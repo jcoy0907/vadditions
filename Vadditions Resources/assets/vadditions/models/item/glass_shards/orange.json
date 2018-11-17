@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "vadditions:item/glass_shards/orange"
+    }
+}

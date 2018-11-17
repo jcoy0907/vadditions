@@ -1,0 +1,11 @@
+{
+    "replace": false,
+    "values": [
+        "#minecraft:air",
+        "#minecraft:glazed_terracotta",
+        "#minecraft:fences",
+        "#minecraft:fence_gates",
+        "minecraft:water",
+        "minecraft:lava"
+    ]
+}
