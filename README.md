@@ -23,23 +23,23 @@ CREDITS
 -------
 
 - Ideas
-Vazkii, creator of the Quark mod
-    (Animals eat their respective food as dropped items
-	Armed armor stands
-	Sheep armor [sheared/not sheared]
-	Squids inflict blindness when hit
-    Balanced stairs crafting
-    More stone pickaxe crafts [andesite, diorite, granite, stone along with cobblestone]
-    Clay blocks -> Clay)
-Terraria?!
-    (Cactuthorn, from the Vilethorn)
+	- Vazkii, creator of the Quark mod
+		- Animals eat their respective food as dropped items
+		- Armed armor stands
+		- Sheep armor [sheared/not sheared]
+		- Squids inflict blindness when hit
+		- Balanced stairs crafting
+    		- More stone pickaxe crafts [andesite, diorite, granite, stone along with cobblestone]
+    		- Clay blocks -> Clay
+	- Terraria?!
+		- (Cactuthorn, from the Vilethorn)
 
 - Command Help
-Sparks from Gamemode4 - Custom crafting alignment, removing shadow from custom crafters, help with stackable crafting
+	- Sparks from Gamemode4 - Custom crafting alignment, removing shadow from custom crafters, help with stackable crafting
                         `Dubbed 'Sparks' Solutions ;)`
 
 - Resource Pack Help
-Jragon014 (Using TTB resource pack as a reference for custom item textures and taking some models and textures to use in the pack)
+	- Jragon014 (Using TTB resource pack as a reference for custom item textures and taking some models and textures to use in the pack)
 
 Disclaimer
 ----------
@@ -47,7 +47,7 @@ Disclaimer
 - `Myself` or `I` is `Andante/Daniel Orr`, other references can be found after their respective longhand.
 
 - I do NOT take credit for the models and/or textures of these custom entities:
-    - White Castle Master `(WCM)`, created by Jragon014 `(J)` and used as 'Blight' `(B)` in The Tempests Box `(TTB`). Used in this pack as TTB is not yet, and probably won't be, out for a while due to 1.13 command changes.
-    - Commands related to the WCM/B were created by J but converted and improved to the requirements of Vadditions `(V)` and the 1.13 command changes.
+	- White Castle Master `(WCM)`, created by Jragon014 `(J)` and used as 'Blight' `(B)` in The Tempests Box `(TTB`). Used in this pack as TTB is not yet, and probably won't be, out for a while due to 1.13 command changes.
+	- Commands related to the WCM/B were created by J but converted and improved to the requirements of Vadditions `(V)` and the 1.13 command changes.
 - I do NOT take credit for the majority of these modules' commands:
     - Structure generation `(SG)`, created by J, adapted for the 1.13 command changes by myself.
