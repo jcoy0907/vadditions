@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+## v3.4.2-r
+# Changes
+- Simplified changelog
+- Putting yellow and dark green dye together makes green dye
+
+## v3.4.1-w
+# Changes
+- Edits for GitHub purposes
+
+----------------------------------------------------------------------------------------------------
 ## Key
 # C Brackets (anything in circular brackets, if inside other brackets then [] will be used)`
 - feat. : New feature! Specify another category by ommiting the dot and adding a colon
