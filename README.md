@@ -9,8 +9,8 @@ Installation
 - Create a new world before installing Vadditions
   If you are installing Vadditions into an existing world, please be aware that this process is irreversible due to world generation mechanics.
 
-- Move `Vadditions Resources.zip` into your                 `resourcepacks` folder
-  Move `Vadditions Data.zip`      into your desired world's `datapacks` folder
+- Move `Vadditions Resources` into your                 `resourcepacks` folder
+  Move `Vadditions Data`      into your desired world's `datapacks` folder
 
 Contributing
 ------------
