@@ -10,7 +10,7 @@ Installation
   If you are installing Vadditions into an existing world, please be aware that this process is irreversible due to world generation mechanics.
 
 - Move `Vadditions Resources` into your                 `resourcepacks` folder
-  Move `Vadditions Data`      into your desired world's `datapacks` folder
+- Move `Vadditions Data`      into your desired world's `datapacks` folder
 
 Contributing
 ------------
@@ -44,10 +44,10 @@ Jragon014 (Using TTB resource pack as a reference for custom item textures and t
 Disclaimer
 ----------
 
-`Myself` or `I` is `Andante/Daniel Orr`, other references can be found after their respective longhand.
+- `Myself` or `I` is `Andante/Daniel Orr`, other references can be found after their respective longhand.
 
-I do NOT take credit for the models and/or textures of these custom entities:
+- I do NOT take credit for the models and/or textures of these custom entities:
     - White Castle Master `(WCM)`, created by Jragon014 `(J)` and used as 'Blight' `(B)` in The Tempests Box `(TTB`). Used in this pack as TTB is not yet, and probably won't be, out for a while due to 1.13 command changes.
-    Commands related to the WCM/B were created by J but converted and improved to the requirements of Vadditions `(V)` and the 1.13 command changes.
-I do NOT take credit for the majority of these modules' commands:
+    - Commands related to the WCM/B were created by J but converted and improved to the requirements of Vadditions `(V)` and the 1.13 command changes.
+- I do NOT take credit for the majority of these modules' commands:
     - Structure generation `(SG)`, created by J, adapted for the 1.13 command changes by myself.
