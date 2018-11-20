@@ -10,3 +10,5 @@ scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
 scoreboard players operation @s VADS_Random = Random2 VADS_Random2
 scoreboard players operation @s VADS_Random %= Random1 VADS_Random2
 scoreboard players operation @s VADS_Random %= @s VADS_Random2
+
+execute as @s[tag=VADS_NeedsOtherRandom] run function vadditions:random_other

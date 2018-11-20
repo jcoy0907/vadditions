@@ -5,20 +5,9 @@
     },
         "overrides": [
                 { "predicate": {"damaged": 0, "damage": 0}, "model": "vadditions:item/blank/golden_axe"},
+            
                 { "predicate": { "damaged": 0, "damage": 0.03125}, "model": "vadditions:item/weapons/transanium_sword"},
-                { "predicate": { "damaged": 0, "damage": 0.06250}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.09375}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.125}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.15625}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.1875}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.21875}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.25}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.28125}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.3125}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.34375}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.375}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.40625}, "model": "vadditions:item/blank/golden_axe"},
-                { "predicate": { "damaged": 0, "damage": 0.4375}, "model": "vadditions:item/blank/golden_axe"},
+            
                 { "predicate": { "damaged": 0, "damage": 1.00}, "model": "vadditions:item/empty"},
                 { "predicate": {"damaged": 1, "damage": 0}, "model": "vadditions:item/blank/golden_axe"}
         ]

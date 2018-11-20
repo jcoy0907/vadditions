@@ -1,3 +1,10 @@
+#illusiner loot table
+execute as @e[type=minecraft:illusioner,tag=!VADS_LootTableProcessed.Illusioner] run data merge entity @s {DeathLootTable:"minecraft:entities/illusioner"}
+tag @e[type=minecraft:illusioner,tag=!VADS_LootTableProcessed.Illusioner] add VADS_LootTableProcessed.Illusioner
+#damaging snowballs
+execute at @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] run effect give @e[sort=nearest,limit=1,distance=..1.5,tag=!VADS_Undead,tag=!VADS_IsSprite,type=!minecraft:player] minecraft:instant_damage 1 0
+execute at @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] run effect give @e[sort=nearest,limit=1,distance=..1.5,tag=VADS_Undead,tag=!VADS_IsSprite,type=!minecraft:player] minecraft:instant_health 1 0
+execute as @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] at @s if entity @e[sort=nearest,limit=1,distance=..1.5,tag=!VADS_IsSprite,type=!minecraft:player] run tag @s add VADS_DamagingSnowball
 #white castle master
     #freeze effect
 scoreboard players add @e[tag=VADS_WhiteCastleMaster] VADS_FrzUseTimer 1
@@ -29,7 +36,6 @@ effect give @a[scores={VADS_SquidKills=1..},gamemode=!creative,gamemode=!spectat
 scoreboard players set @a[scores={VADS_SquidKills=1..}] VADS_SquidKills 0
 execute as @a[scores={VADS_Random=1..3},nbt=!{ActiveEffects:[{Id:14b}]},nbt=!{ActiveEffects:[{Id:15b}]},gamemode=!creative,gamemode=!spectator] at @s if entity @e[type=minecraft:squid,sort=nearest,limit=1,distance=..1] run playsound minecraft:entity.squid.squirt voice @s ~ ~ ~ 100 2 1
 execute as @a[scores={VADS_Random=1..3},nbt=!{ActiveEffects:[{Id:14b}]},nbt=!{ActiveEffects:[{Id:15b}]},gamemode=!creative,gamemode=!spectator] at @s if entity @e[type=minecraft:squid,sort=nearest,limit=1,distance=..1] run effect give @s minecraft:blindness 5 0
-
     #underwater effects
         #swimming particles
 execute at @a[scores={VADS_Swim=1..},gamemode=!spectator] unless block ~ ~ ~ #minecraft:air positioned ~ ~.3 ~ run particle minecraft:bubble ^ ^ ^-1.5 0 .1 0 0 1 normal @a
@@ -45,15 +51,13 @@ execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua
 execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator] at @s if score @s VADS_BubbleDef matches 0..99 run effect give @s minecraft:weakness 1 2
 
 execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator] at @s if score @s VADS_BubbleDef matches -20..0 run effect give @s minecraft:weakness 1 3
-
         #mining fatigue (for melee combat)
 execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator] at @s if score @s VADS_BubbleDef matches 100..199 run effect give @s minecraft:mining_fatigue 1 1
 
 execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator] at @s if score @s VADS_BubbleDef matches 0..99 run effect give @s minecraft:mining_fatigue 1 2
 
 execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator] at @s if score @s VADS_BubbleDef matches -20..0 run effect give @s minecraft:mining_fatigue 1 3
-
-    # Custom Effects
+    #custom effects
 execute as @e[tag=VADS_ConfusedEffect] at @s run particle minecraft:effect ~ ~ ~ .5 .5 .5 .1 5 force
 execute as @e[tag=VADS_ConfusedEffect,tag=!VADS_ConfusedProcessed] run data merge entity @s {Attributes:[{Base:0.0d,Name:"generic.followRange"},{Base:0.0d,Name:"generic.attackDamage"}],carriedBlockState:{Name:"minecraft:barrier"},NoAI:1}
 execute as @e[tag=VADS_ConfusedEffect] if score @s VADS_CnfsedTime matches 100.. run function entities:effects/remove/custom/confused

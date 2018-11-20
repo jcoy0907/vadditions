@@ -1,10 +1,15 @@
 #general
 tag @e[type=minecraft:villager,tag=!VADS_VillagerProcessed] add VADS_VillagerProcessed
 kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:barrier"}}]
+clear @a[nbt={Inventory:[{tag:{vadditions:{visual_item:1b}}}]}] #vadditions:visual_item{vadditions:{visual_item:1b}}
+kill @e[type=minecraft:item,nbt={Item:{tag:{vadditions:{visual_item:1b}}}}]
 execute as @e[tag=VADS_Turn] at @s run tp @s ~ ~ ~ ~1.5 0
+execute if score Second_150 VADS_Time matches 150 run title @a[scores={VADS_ItemCool=110}] actionbar {"translate":"text.vadditions.bug_report"}
+gamerule sendCommandFeedback true
 
+#random
 execute as @e[tag=!VADS_NoRandom] run function vadditions:random
-
+    #overall random
 scoreboard players set Overall VADS_Random2 100
 scoreboard players add Overall VADS_Random 0
 scoreboard players operation Random1 VADS_Random2 *= Random2 VADS_Random2
@@ -12,7 +17,7 @@ scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
 scoreboard players operation Overall VADS_Random = Random2 VADS_Random2
 scoreboard players operation Overall VADS_Random %= Random1 VADS_Random2
 scoreboard players operation Overall VADS_Random %= Overall VADS_Random2
-
+    #slime random
 scoreboard players set IslandCheck.Slime VADS_Random2 100
 scoreboard players add IslandCheck.Slime VADS_Random 0
 scoreboard players operation Random1 VADS_Random2 *= Random2 VADS_Random2
@@ -20,9 +25,14 @@ scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
 scoreboard players operation IslandCheck.Slime VADS_Random = Random2 VADS_Random2
 scoreboard players operation IslandCheck.Slime VADS_Random %= Random1 VADS_Random2
 scoreboard players operation IslandCheck.Slime VADS_Random %= IslandCheck.Slime VADS_Random2
-
-execute if score Second_150 VADS_Time matches 150 run title @a[scores={VADS_ItemCool=110}] actionbar {"translate":"text.vadditions.bug_report"}
-gamerule sendCommandFeedback true
+    #field random
+scoreboard players set Fields VADS_Random2 100
+scoreboard players add Fields VADS_Random 0
+scoreboard players operation Random1 VADS_Random2 *= Random2 VADS_Random2
+scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
+scoreboard players operation Fields VADS_Random = Random2 VADS_Random2
+scoreboard players operation Fields VADS_Random %= Random1 VADS_Random2
+scoreboard players operation Fields VADS_Random %= Fields VADS_Random2
 
 #structures
     #kill ore entities without blocks
@@ -66,7 +76,7 @@ execute as @a[scores={VADS_ItemCool=0..99}] run title @s actionbar [{"translate"
 title @a[scores={VADS_ItemCool=100..109}] actionbar {"translate":"text.item.recharging.done"}
 
 tag @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}}] remove VADS_WeaponNoActionbar
-title @a[scores={VADS_ItemCool=110},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}}] actionbar [{"translate":"text.item.status.ready"}]
+title @a[scores={VADS_ItemCool=110},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}}] actionbar {"translate":"text.item.status.ready"}
 execute as @a[nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}},tag=!VADS_WeaponNoActionbar] run title @s actionbar ""
 execute as @a[nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}},tag=!VADS_WeaponNoActionbar] run tag @s add VADS_WeaponNoActionbar
     #seconds
@@ -184,8 +194,8 @@ tag @e[tag=!VADS_Undead,type=minecraft:zombie_villager] add VADS_Undead
 
 #pulses
 scoreboard players add Pulse VADS_Tick 1
-execute if score Pulse VADS_Tick = PulseTick VADS_Tick run function #vadditions:clock
-execute if score Pulse VADS_Tick = PulseTick VADS_Tick run scoreboard players set Pulse VADS_Tick 0
+execute if score Pulse VADS_Tick >= PulseTick VADS_Tick run function #vadditions:clock
+execute if score Pulse VADS_Tick >= PulseTick VADS_Tick run scoreboard players set Pulse VADS_Tick 0
 
 #fire notification
 execute as @a run scoreboard players operation @s VADS_FireSecond = @s VADS_Fire
@@ -250,50 +260,53 @@ tag @e[type=minecraft:ender_dragon,tag=!VADS_LootTableProcessed] add VADS_LootTa
 
 # Process Items
 # Sticky TNT
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:sticky_tnt"}}}] run replaceitem entity @s weapon.mainhand diamond_hoe{Unbreakable:1,Damage:5s,isItem:1b,VADS_Item:"vadditions:sticky_tnt",display:{Name:"{\"translate\":\"item.vadditions.tnt.sticky\"}"}}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:sticky_tnt"}}}] weapon.mainhand diamond_hoe{Unbreakable:1,Damage:5s,isItem:1b,VADS_Item:"vadditions:sticky_tnt",display:{Name:"{\"translate\":\"item.vadditions.tnt.sticky\"}"}}
 
 # Smeltry
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:smeltry"}}}] run replaceitem entity @s weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:10s,isMachine:1b,VADS_Machine:"vadditions:smeltry",display:{Name:"{\"translate\":\"item.vadditions.smeltry\"}"}}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:smeltry"}}}] weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:10s,isMachine:1b,VADS_Machine:"vadditions:smeltry",display:{Name:"{\"translate\":\"item.vadditions.smeltry\"}"}}
 
 # Staffs
     # Stand
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.stand"}}}] run replaceitem entity @s weapon.mainhand minecraft:iron_hoe{Unbreakable:1,Damage:22,display:{Name:"{\"translate\":\"item.vadditions.staff.stand\"}"},HideFlags:1,isCustomItem:1b,VADS_Item:"vadditions:staff.stand"}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.stand"}}}] weapon.mainhand minecraft:iron_hoe{Unbreakable:1,Damage:22,display:{Name:"{\"translate\":\"item.vadditions.staff.stand\"}"},HideFlags:1,isCustomItem:1b,VADS_Item:"vadditions:staff.stand"}
     # Unsightbereness
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.unsightbereness"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}],display:{Name:"{\"translate\":\"item.vadditions.staff.unsightbereness\"}",Lore:["§7Type: §cStaff","§7Tier:  §cN/A","","§7Attributes:"," §8None","","§7When in main hand:"," §21.5 Attack Damage"]},HideFlags:1,VADS_Staff:"vadditions:staff.unsightbereness",isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:6,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.5d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.unsightbereness"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}],display:{Name:"{\"translate\":\"item.vadditions.staff.unsightbereness\"}",Lore:["§7Type: §cStaff","§7Tier:  §cN/A","","§7Attributes:"," §8None","","§7When in main hand:"," §21.5 Attack Damage"]},HideFlags:1,VADS_Staff:"vadditions:staff.unsightbereness",isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:6,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.5d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
 
     # Levitation
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §cmissingno","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §cmissingno","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
 
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation.tier.1"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §a1","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation.1"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.0d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}],Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation.tier.1"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §a1","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation.1"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.0d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}],Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
 
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation.tier.2"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §e2","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation.2"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:2.0d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}],Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation.tier.2"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §e2","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation.2"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:2.0d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}],Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
 
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation.tier.3"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §63","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation.3"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:3.0d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}],Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:staff.levitation.tier.3"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,display:{Name:"{\"translate\":\"item.vadditions.staff.levitation\"}",Lore:["§7Type: §cStaff","§7Tier:  §63","","§7Attributes:"," §8Levitation"]},HideFlags:1,VADS_Staff:"vadditions:staff.levitation",weaponAttributes:["levitation.3"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:3.0d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}],Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
 
 # Natura
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:natura"}}}] run replaceitem entity @s weapon.mainhand minecraft:iron_hoe{isTool:1b,VADS_Tool:"vadditions:natura",display:{Name:"{\"color\":\"green\",\"translate\":\"item.vadditions.tool.natura\"}"},Unbreakable:1,Damage:2,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-0.8d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:natura"}}}] weapon.mainhand minecraft:iron_hoe{isTool:1b,VADS_Tool:"vadditions:natura",display:{Name:"{\"color\":\"green\",\"translate\":\"item.vadditions.tool.natura\"}"},Unbreakable:1,Damage:2,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-0.8d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
 
 # Hammer
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:hammer"}}}] run replaceitem entity @s weapon.mainhand minecraft:golden_axe{isTool:1b,VADS_Tool:"vadditions:hammer",display:{Name:"{\"translate\":\"item.vadditions.tool.hammer\"}"}}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:hammer"}}}] weapon.mainhand minecraft:golden_axe{isTool:1b,VADS_Tool:"vadditions:hammer",display:{Name:"{\"translate\":\"item.vadditions.tool.hammer\"}"}}
 
 # Mythical Stone
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:stone.mythical"}}}] run replaceitem entity @s weapon.mainhand minecraft:iron_hoe{Processed:1,Unbreakable:1,Damage:1,VADS_Item:"vadditions:stone_mythical",isCustomItem:1b,Enchantments:[{id:"minecraft:unbreaking",lvl:10}],HideFlags:1,display:{Name:"{\"translate\":\"item.vadditions.stone.mythical\"}"}}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:stone.mythical"}}}] weapon.mainhand minecraft:iron_hoe{Processed:1,Unbreakable:1,Damage:1,VADS_Item:"vadditions:stone_mythical",isCustomItem:1b,Enchantments:[{id:"minecraft:unbreaking",lvl:10}],HideFlags:1,display:{Name:"{\"translate\":\"item.vadditions.stone.mythical\"}"}}
 
 # Weapons
     # Cactuthorn
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:cactuthorn"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,Unbreakable:1,Damage:2,Enchantments:[{id:"minecraft:unbreaking",lvl:10},{id:"minecraft:sharpness",lvl:2}],display:{Name:"{\"translate\":\"item.vadditions.weapon.cactuthorn\"}",Lore:["§7Type: §cRanged Weapon","§7Tier:  §6III","","§7Attributes:"," §8Piercing","","§7When in main hand:"," §27 Second Weapon Cooldown"," §26 Attack Damage Per Damage Tick"," §2Travels 4.25 Blocks (Total)"]},HideFlags:1,VADS_Weapon:"vadditions:cactuthorn",weaponAttributes:["piercing"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,Damage:2,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:cactuthorn"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Processed:1,Unbreakable:1,Damage:2,Enchantments:[{id:"minecraft:unbreaking",lvl:10},{id:"minecraft:sharpness",lvl:2}],display:{Name:"{\"translate\":\"item.vadditions.weapon.cactuthorn\"}",Lore:["§7Type: §cRanged Weapon","§7Tier:  §6III","","§7Attributes:"," §8Piercing","","§7When in main hand:"," §27 Second Weapon Cooldown"," §26 Attack Damage Per Damage Tick"," §2Travels 4.25 Blocks (Total)"]},HideFlags:1,VADS_Weapon:"vadditions:cactuthorn",weaponAttributes:["piercing"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,Damage:2,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
     # Hellstone
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:hellstone"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:3,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10},{id:"minecraft:fire_aspect",lvl:2},{id:"minecraft:sharpness",lvl:5}],display:{Name:"{\"translate\":\"item.vadditions.weapon.hellstone\"}",Lore:["§7Type: §cRanged Weapon","§7Tier:  §6Platinum","","§7Attributes:"," §8Piercing"," §8Flame"," §8Imploding","","§7When in main hand:"," §27 Second Weapon Cooldown"," §29 Attack Damage Per Damage Tick"," §2Travels 15.25 Blocks (Total)"]},HideFlags:1,VADS_Weapon:"vadditions:hellstone",weaponAttributes:["piercing","flame"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:hellstone"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:3,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10},{id:"minecraft:fire_aspect",lvl:2},{id:"minecraft:sharpness",lvl:5}],display:{Name:"{\"translate\":\"item.vadditions.weapon.hellstone\"}",Lore:["§7Type: §cRanged Weapon","§7Tier:  §6Platinum","","§7Attributes:"," §8Piercing"," §8Flame"," §8Imploding","","§7When in main hand:"," §27 Second Weapon Cooldown"," §29 Attack Damage Per Damage Tick"," §2Travels 15.25 Blocks (Total)"]},HideFlags:1,VADS_Weapon:"vadditions:hellstone",weaponAttributes:["piercing","flame"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
     # IHD
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:ihd"}}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:1,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10}],display:{Name:"{\"translate\":\"item.vadditions.weapon.ihd\"}",Lore:["§7Type: §cHoming Weapon","§7Tier:  §6I","","§7Attributes:"," §8Homing"," §8Poison"," §cDoesn't attack undead"," §cDoesn't kill the entity","","§7When in main hand:"," §27 Second Weapon Cooldown"," §20.5 Attack Damage Per Damage Tick §7(Poison Effect)"," §2Travels for 30 seconds"]},HideFlags:1,VADS_Weapon:"vadditions:ihd",weaponAttributes:["homing","poison","noundead","doesntkill"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:1,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10}],display:{Name:"{\"translate\":\"item.vadditions.weapon.ihd\"}",Lore:["§7Type: §cHoming Weapon","§7Tier:  §6I","","§7Attributes:"," §8Homing"," §8Poison"," §cDoesn't attack undead"," §cDoesn't kill the entity","","§7When in main hand:"," §27 Second Weapon Cooldown"," §20.5 Attack Damage Per Damage Tick §7(Poison Effect)"," §2Travels for 30 seconds"]},HideFlags:1,VADS_Weapon:"vadditions:ihd",weaponAttributes:["homing","poison","noundead","doesntkill"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
     # Transanium Sword
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:transanium_sword"}}}] run replaceitem entity @s weapon.mainhand minecraft:golden_axe{Unbreakable:1,Damage:1,display:{Name:"{\"translate\":\"item.vadditions.transanium_sword\"}"},Enchantments:[{id:"minecraft:sharpness",lvl:1},{id:"minecraft:knockback",lvl:5},{id:"vadditions:freezing",lvl:1}],HideFlags:1,isWeapon:1b,VADS_Weapon:"vadditions:transanium_sword",hasCustomEnchant:1b,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-1.5d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:transanium_sword"}}}] weapon.mainhand minecraft:golden_axe{Unbreakable:1,Damage:1,display:{Name:"{\"translate\":\"item.vadditions.transanium_sword\"}"},Enchantments:[{id:"minecraft:sharpness",lvl:1},{id:"minecraft:knockback",lvl:5},{id:"vadditions:freezing",lvl:1}],HideFlags:1,isWeapon:1b,VADS_Weapon:"vadditions:transanium_sword",hasCustomEnchant:1b,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-1.5d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
 
 # Transanium
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:transanium"}}}] run replaceitem entity @s weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:2,isCustomItem:1b,VADS_Item:"vadditions:ore.transanium",display:{Name:"{\"translate\":\"item.vadditions.ore.transanium\"}"}}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:transanium"}}}] weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:2,isCustomItem:1b,VADS_Item:"vadditions:ore.transanium",display:{Name:"{\"translate\":\"item.vadditions.ore.transanium\"}"}}
 
 # Lazers
     # Transanium
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:lazer.transanium"}}}] run replaceitem entity @s weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:4,isMachine:1b,VADS_Machine:"vadditions:lazer.transanium",display:{Name:"{\"translate\":\"item.vadditions.lazer.transanium\"}"}}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:lazer.transanium"}}}] weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:4,isMachine:1b,VADS_Machine:"vadditions:lazer.transanium",display:{Name:"{\"translate\":\"item.vadditions.lazer.transanium\"}"}}
 
-execute as @a[nbt={SelectedItem:{tag:{process:"vadditions:obbane"}}}] run replaceitem entity @s weapon.mainhand minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"item.vadditions.tool.obbane\"}"},AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.5d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:3.0d,Slot:"mainhand",AttributeName:"vadditions.haste.3",Operation:0,Name:"haste.3"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:0.0198023224d,Slot:"mainhand",AttributeName:"generic.movementSpeed",Operation:0,Name:"movementSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:obbane"}}}] weapon.mainhand minecraft:diamond_pickaxe{display:{Name:"{\"translate\":\"item.vadditions.tool.obbane\"}"},AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.5d,Slot:"mainhand",AttributeName:"generic.attackDamage",Operation:0,Name:"attackDamage"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:3.0d,Slot:"mainhand",AttributeName:"vadditions.haste.3",Operation:0,Name:"haste.3"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:0.0198023224d,Slot:"mainhand",AttributeName:"generic.movementSpeed",Operation:0,Name:"movementSpeed"}]}
+
+# Bonsai Pot
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:bonsai_pot"}}}] weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:12,display:{Name:"{\"translate\":\"block.vadditions.bonsai_pot\"}"},isMachine:1b,VADS_Machine:"vadditions:bonsai_pot"}

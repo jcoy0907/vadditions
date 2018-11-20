@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+## v3.5.0-r
+# Bugs
+- Removed unnessecary scoreboards
+# Changes
+- Revised tags again
+- Added bonsai pots
+- Added firey arrows
+- Added (very) damaging snowballs
+- Added illusioner loot table
+- Illusioners now spawn in caves and deep caves
+- Remembered to update the build count because *cough* someone always forgets to
+
 ## v3.4.2-r
 # Changes
 - Simplified changelog

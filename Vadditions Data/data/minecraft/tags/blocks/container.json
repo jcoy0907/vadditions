@@ -1,0 +1,11 @@
+{
+    "replace": "false",
+    "values": [
+        "#minecraft:chests",
+        "#minecraft:shulker_boxes",
+        "minecraft:hopper",
+        "minecraft:dropper",
+        "minecraft:dispenser",
+        "minecraft:furnace"
+    ]
+}

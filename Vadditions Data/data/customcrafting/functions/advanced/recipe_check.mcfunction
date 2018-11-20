@@ -1,4 +1,4 @@
-#@s = custom crafter unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]}
+#@s = custom crafter unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]}
 
 #pre
 execute store result score @s VADS_FrstStckSze run data get block ~ ~ ~ Items[0].Count
@@ -19,5 +19,5 @@ execute if block ~ ~ ~ minecraft:dropper{Items:[{Slot:0b,id:"minecraft:end_stone
 #post
 execute store result score @s VADS_NewStckSze run data get block ~ ~ ~ Items[0].Count
 scoreboard players operation @s VADS_NewStckSze *= @s VADS_FrstStckSze
-execute if block ~ ~ ~ #vadditions:holds/customcrafter{Items:[{tag:{vadditions:{multiply:true}}}]} store result block ~ ~ ~ Items[0].Count byte 1 run scoreboard players get @s VADS_NewStckSze
-execute if block ~ ~ ~ #vadditions:holds/customcrafter{Items:[{tag:{vadditions:{multiply:true}}}]} run data remove block ~ ~ ~ Items[0].tag.vadditions
+execute if block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{tag:{vadditions:{multiply:true}}}]} store result block ~ ~ ~ Items[0].Count byte 1 run scoreboard players get @s VADS_NewStckSze
+execute if block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{tag:{vadditions:{multiply:true}}}]} run data remove block ~ ~ ~ Items[0].tag.vadditions
