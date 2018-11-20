@@ -1,17 +1,17 @@
 #validity check
-execute as @e[tag=VADS_CustomCrafter,type=minecraft:armor_stand] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true]{Items:[]} run function customcrafting:recipe_validity_check
+execute as @e[tag=VADS_CustomCrafter,type=minecraft:armor_stand] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true]{Items:[]} run function customcrafting:recipe_validity_check
 
 #reset stack sizes/slot count on empty crafters
-execute as @e[tag=VADS_CustomCrafter,type=minecraft:armor_stand] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{}]} run scoreboard players set @s[scores={VADS_SlotCount=1..}] VADS_SlotCount 0
-execute as @e[tag=VADS_CustomCrafter,type=minecraft:armor_stand] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{}]} run scoreboard players set @s[scores={VADS_StackSize=1..}] VADS_StackSize 0
+execute as @e[tag=VADS_CustomCrafter,type=minecraft:armor_stand] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[{}]} run scoreboard players set @s[scores={VADS_SlotCount=1..}] VADS_SlotCount 0
+execute as @e[tag=VADS_CustomCrafter,type=minecraft:armor_stand] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[{}]} run scoreboard players set @s[scores={VADS_StackSize=1..}] VADS_StackSize 0
 
 #run recipe checks
-execute as @e[type=minecraft:armor_stand,tag=VADS_BasicCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function customcrafting:basic/recipe_check
-execute as @e[type=minecraft:armor_stand,tag=VADS_AdvancedCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function customcrafting:advanced/recipe_check
-execute as @e[type=minecraft:armor_stand,tag=VADS_Compressor] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function customcrafting:compressor/recipe_check
-execute as @e[type=minecraft:armor_stand,tag=VADS_MachineCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function customcrafting:machine/recipe_check
-execute as @e[type=minecraft:armor_stand,tag=VADS_Smeltry] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function customcrafting:smeltry/recipe_check
-execute as @e[type=minecraft:armor_stand,tag=VADS_Uncrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function customcrafting:uncrafting/recipe_check
+execute as @e[type=minecraft:armor_stand,tag=VADS_BasicCrafter] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true] run function customcrafting:basic/recipe_check
+execute as @e[type=minecraft:armor_stand,tag=VADS_AdvancedCrafter] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true] run function customcrafting:advanced/recipe_check
+execute as @e[type=minecraft:armor_stand,tag=VADS_Compressor] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true] run function customcrafting:compressor/recipe_check
+execute as @e[type=minecraft:armor_stand,tag=VADS_MachineCrafter] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true] run function customcrafting:machine/recipe_check
+execute as @e[type=minecraft:armor_stand,tag=VADS_Smeltry] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true] run function customcrafting:smeltry/recipe_check
+execute as @e[type=minecraft:armor_stand,tag=VADS_Uncrafter] at @s unless block ~ ~ ~ #vadditions:holds/customcrafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/customcrafter[triggered=true] run function customcrafting:uncrafting/recipe_check
 
 #brightness
 execute unless score Daytime VADS_Overall matches 13000..23400 as @e[type=minecraft:armor_stand,tag=VADS_FireStand,scores={VADS_Fire=..10}] run data merge entity @s {Invulnerable:1,Marker:1,Fire:20s}

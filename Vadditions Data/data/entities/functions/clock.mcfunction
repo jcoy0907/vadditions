@@ -1,6 +1,3 @@
-#firey arrows
-execute at @e[type=minecraft:arrow,scores={VADS_Fire=1..},nbt={inGround:1b},tag=!VADS_FiredArrow] run setblock ~ ~ ~ minecraft:fire keep
-tag @e[type=minecraft:arrow,scores={VADS_Fire=1..},nbt={inGround:1b},tag=!VADS_FiredArrow] add VADS_FiredArrow
     #saplings Plant Themselves
 execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:oak_sapling",Count:1b},OnGround:1b},scores={VADS_Random=1..9}] at @s unless entity @p[distance=..1] if block ~ ~-1 ~ #vadditions:holds/sapling unless block ~ ~ ~ #minecraft:saplings run function entityprocesses:sapling_planting/oak
 execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:spruce_sapling",Count:1b},OnGround:1b},scores={VADS_Random=1..9}] at @s unless entity @p[distance=..1] if block ~ ~-1 ~ #vadditions:holds/sapling unless block ~ ~ ~ #minecraft:saplings run function entityprocesses:sapling_planting/spruce

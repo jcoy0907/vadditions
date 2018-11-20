@@ -1,7 +1,6 @@
 {
     "values": [
         "#customcrafting:clock",
-        "#machines:clock",
         "vadditions:clock",
         "entities:clock"
     ]

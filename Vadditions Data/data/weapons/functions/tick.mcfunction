@@ -8,8 +8,8 @@ execute at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run parti
 execute at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~ ~ ~9 .1 .5 .1 0 2 normal
 execute at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~ ~ ~-9 .1 .5 .1 0 2 normal
 execute at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run particle minecraft:enchanted_hit ~ ~ ~ .1 .5 .1 0 2 normal
-execute if score Fields VADS_Random matches 1..30 at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run tag @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,tag=!VADS_Passive,distance=..10,sort=random,limit=2] add VADS_LightField.Damage.Normal
-execute if score Fields VADS_Random matches 1..30 at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run tag @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_NoWeaponDamage,tag=VADS_Undead,distance=..10,sort=random,limit=2] add VADS_LightField.Damage.Invert
+execute if score Overall VADS_Random matches 1..30 at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run tag @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,tag=!VADS_Passive,distance=..10,sort=random,limit=2] add VADS_LightField.Damage.Normal
+execute if score Overall VADS_Random matches 1..30 at @e[type=minecraft:armor_stand,tag=VADS_LightField.Particle] run tag @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_NoWeaponDamage,tag=VADS_Undead,distance=..10,sort=random,limit=2] add VADS_LightField.Damage.Invert
 tag @e[tag=VADS_LightField.Damage.Normal] add VADS_LightField.Damage
 tag @e[tag=VADS_LightField.Damage.Invert] add VADS_LightField.Damage
 effect give @e[tag=VADS_LightField.Damage.Normal] minecraft:instant_damage 1 0 true
