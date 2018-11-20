@@ -13,6 +13,8 @@ scoreboard objectives add VADS_Overall dummy {"translate":"text.scoreboard.vaddi
 scoreboard objectives add VADS_CnfsedTime dummy {"translate":"text.scoreboard.vadditions.cnfsedtime"}
 scoreboard objectives add VADS_Random dummy {"translate":"text.scoreboard.vadditions.random"}
 scoreboard objectives add VADS_Random2 dummy {"translate":"text.scoreboard.vadditions.random2"}
+scoreboard objectives add VADS_Random3 dummy {"translate":"text.scoreboard.vadditions.random"}
+scoreboard objectives add VADS_Random4 dummy {"translate":"text.scoreboard.vadditions.random2"}
 scoreboard objectives add VADS_Weight dummy {"translate":"text.scoreboard.vadditions.weight"}
 scoreboard objectives add VADS_Time dummy {"translate":"text.scoreboard.vadditions.time"}
 scoreboard objectives add VADS_SecondTime dummy {"translate":"text.scoreboard.vadditions.secondtime"}
@@ -20,10 +22,6 @@ scoreboard objectives add VADS_DeathCheck minecraft.custom:minecraft.deaths {"tr
 scoreboard objectives add VADS_HealthCheck dummy {"translate":"text.scoreboard.vadditions.healthcheck"}
 scoreboard objectives add VADS_SquidKills minecraft.killed:minecraft.squid {"translate":"text.scoreboard.vadditions.squidkills"}
 scoreboard objectives add VADS_CrouchCMs minecraft.custom:crouch_one_cm {"translate":"text.scoreboard.vadditions.crouch_cms"}
-scoreboard objectives add VADS_MineWheat minecraft.mined:minecraft.wheat {"translate":"text.scoreboard.vadditions.minewheat"}
-scoreboard objectives add VADS_MineCarrot minecraft.mined:minecraft.carrots {"translate":"text.scoreboard.vadditions.minecarrot"}
-scoreboard objectives add VADS_MinePotato minecraft.mined:minecraft.potatoes {"translate":"text.scoreboard.vadditions.minepotato"}
-scoreboard objectives add VADS_MineBeets minecraft.mined:minecraft.beetroots {"translate":"text.scoreboard.vadditions.minebeetroot"}
 scoreboard objectives add VADS_OreEntDens dummy {"translate":"text.scoreboard.vadditions.oreentitydensity"}
 scoreboard objectives add VADS_FreezeTimer dummy {"translate":"text.scoreboard.vadditions.freezetimer"}
 scoreboard objectives add VADS_FrzUseTimer dummy {"translate":"text.scoreboard.vadditions.freezeusetimer"}
@@ -57,11 +55,18 @@ scoreboard objectives add VADS_Independent dummy {"translate":"text.scoreboard.v
 scoreboard objectives add VADS_Swim minecraft.custom:minecraft.swim_one_cm {"translate":"text.scoreboard.vadditions.swim_one_cm"}
 scoreboard objectives add VADS_TradeCheck minecraft.custom:minecraft.traded_with_villager {"translate":"text.scoreboard.vadditions.traded_with_villager"}
 scoreboard objectives add VADS_SmltryCnt dummy {"translate":"text.scoreboard.vadditions.smeltrycount"}
+scoreboard objectives add VADS_PotCnt dummy {"translate":"text.scoreboard.vadditions.bonsaipotcount"}
 scoreboard objectives add VADS_TagCount dummy {"translate":"text.scoreboard.vadditions.tagcount"}
+scoreboard objectives add VADS_BPDirtCount dummy {"translate":"text.scoreboard.vadditions.bonsaipotdirtcount"}
 
 execute unless score VersionNum-Builds VADS_Overall matches 12.. run scoreboard objectives remove VADS_RndProc
 execute unless score VersionNum-Builds VADS_Overall matches 15.. run scoreboard objectives remove VADS_StckMltplr
 execute unless score VersionNum-Builds VADS_Overall matches 15.. run scoreboard objectives remove VADS_FrstStckCnt
+execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MineWheat
+execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MineCarrot
+execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MinePotato
+execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MineBeets
+
 #gamerules and other general commands
 recipe give @a *
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule commandBlockOutput false
@@ -84,8 +89,8 @@ bossbar set vads:status/bosshealth/white_castle_master color blue
 bossbar set vads:status/bosshealth/white_castle_master style notched_20
 #update messages
 scoreboard players operation VersionNum-Builds.Prev VADS_Overall = VersionNum-Builds VADS_Overall
-scoreboard players set VersionNum-Builds VADS_Overall 20
-execute if score VersionNum-Builds.Prev VADS_Overall < VersionNum-Builds VADS_Overall run tellraw @a {"translate":"text.vadditions.update"}
+scoreboard players set VersionNum-Builds VADS_Overall 22
+execute if score VersionNum-Builds.Prev VADS_Overall < VersionNum-Builds VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/Vadditions/releases"}}
 scoreboard players reset VersionNum-Builds.Prev VADS_Overall
 #initial scores
 execute unless score Hardmode VADS_Overall matches 0.. run scoreboard players set Hardmode VADS_Overall 0
@@ -96,6 +101,10 @@ execute as @a unless score @s VADS_UseIronHoe matches 0.. run scoreboard players
 scoreboard players set Random2 VADS_Random2 100011001
 scoreboard players set Random1 VADS_Random2 100
 scoreboard players set @a VADS_Random2 100
+
+scoreboard players set Random2 VADS_Random4 100011001
+scoreboard players set Random1 VADS_Random4 100
+scoreboard players set @a VADS_Random4 100
 
 scoreboard players set PulseTick VADS_Tick 16
 scoreboard players set TickSecond VADS_Independent 20

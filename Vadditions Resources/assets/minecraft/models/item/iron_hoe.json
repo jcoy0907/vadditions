@@ -5,8 +5,10 @@
     },
         "overrides": [
                 { "predicate": {"damaged": 0, "damage": 0}, "model": "vadditions:item/blank/iron_hoe"},
+            
                 { "predicate": {"damaged": 0, "damage": 0.004}, "model": "vadditions:item/stones/mythical"},
                 { "predicate": {"damaged": 0, "damage": 0.008}, "model": "vadditions:item/tools/natura"},
+            
                 { "predicate": {"damaged": 0, "damage": 0.012}, "model": "vadditions:item/glass_shards/normal"},
                 { "predicate": {"damaged": 0, "damage": 0.016}, "model": "vadditions:item/glass_shards/orange"},
                 { "predicate": {"damaged": 0, "damage": 0.020}, "model": "vadditions:item/glass_shards/magenta"},
@@ -24,29 +26,13 @@
                 { "predicate": {"damaged": 0, "damage": 0.068}, "model": "vadditions:item/glass_shards/red"},
                 { "predicate": {"damaged": 0, "damage": 0.072}, "model": "vadditions:item/glass_shards/black"},
                 { "predicate": {"damaged": 0, "damage": 0.076}, "model": "vadditions:item/glass_shards/white"},
+            
                 { "predicate": {"damaged": 0, "damage": 0.080}, "model": "vadditions:mob/white_castle_master/still"},
                 { "predicate": {"damaged": 0, "damage": 0.084}, "model": "vadditions:mob/white_castle_master/moving"},
+            
                 { "predicate": {"damaged": 0, "damage": 0.088}, "model": "vadditions:item/staffs/stand"},
+            
                 { "predicate": {"damaged": 0, "damage": 0.092}, "model": "vadditions:mob/plurker"},
-                { "predicate": {"damaged": 0, "damage": 0.096}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.100}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.104}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.108}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.112}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.116}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.120}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.124}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.128}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.132}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.136}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.140}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.144}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.148}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.152}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.156}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.160}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.164}, "model": "vadditions:item/blank/iron_hoe"},
-                { "predicate": {"damaged": 0, "damage": 0.168}, "model": "vadditions:item/blank/iron_hoe"},
                 { "predicate": {"damaged": 0, "damage": 1}, "model": "vadditions:item/blank/iron_hoe"},				
                 { "predicate": {"damaged": 1, "damage": 0}, "model": "vadditions:item/blank/iron_hoe"}
         ]

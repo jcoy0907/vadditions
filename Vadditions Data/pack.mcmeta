@@ -2,7 +2,7 @@
     "pack": {
         "pack_format": 0,
         "description": "§2Vadditions §7data pack\n§7Customizing Vanilla\n§8Minecraft §81.13+",
-        "version": "3.4.0-r",
+        "version": "0.3.5.0-r",
         "credits": [
             {
                 "id": "andante",
@@ -15,6 +15,18 @@
                 "name": "Jragon014",
                 "nickname": "",
                 "role": "Entity Models and Ideas"
+            },
+            {
+                "id": "sparks",
+                "name": "Sparks",
+                "nickname": "",
+                "role": "Command Help and Ideas"
+            },
+            {
+                "id": "vazkii",
+                "name": "Vazkii",
+                "nickname": "",
+                "role": "Ideas"
             }
         ]
     }

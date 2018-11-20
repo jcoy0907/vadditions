@@ -1,6 +1,20 @@
 {
-  "pack": {
-    "pack_format": 4,
-    "description": "§aLang and textures for §2Vadditions §7(16x)"
-  }
+    "pack": {
+        "pack_format": 4,
+        "description": "§aLang and textures for §2Vadditions §7(16x)",
+        "credits": [
+            {
+                "id": "andante",
+                "name": "Andante",
+                "nickname": "Dan",
+                "role": "Pack Concept and Creator"
+            },
+            {
+                "id": "jragon",
+                "name": "Jragon014",
+                "nickname": "",
+                "role": "Entity Models"
+            }
+        ]
+    }
 }
