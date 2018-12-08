@@ -1,4 +1,4 @@
-particle minecraft:poof ~ ~ ~ .5 .5 .5 .2 50 force
+particle minecraft:poof ~ ~ ~ .5 .5 .5 .2 50 normal
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 2 1
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 .5 1
 playsound minecraft:entity.witch.ambient voice @a[distance=..16] ~ ~ ~ 2 2 1

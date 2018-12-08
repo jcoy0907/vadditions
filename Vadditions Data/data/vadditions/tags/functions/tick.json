@@ -1,8 +1,7 @@
 {
     "values": [
-        "#customcrafting:tick",
+        "#custom_crafting:tick",
         "#death:tick",
-        "#enchants:tick",
         "#entities:tick",
         "#hardmode:tick",
         "#machines:tick",

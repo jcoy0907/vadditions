@@ -1,4 +1,0 @@
-#particle minecraft:block minecraft:obsidian ~ ~1 ~ .1 .25 .1 .05 30 force @a
-data remove entity @e[type=minecraft:item,sort=nearest,limit=1,nbt={Item:{tag:{display:{Name:"{\"translate\":\"block.vadditions.customcrafter.advanced\"}"}}}}] Item.tag.display
-summon minecraft:area_effect_cloud ~ ~.5 ~ {Passengers:[{id:"minecraft:item",Item:{id:"minecraft:crafting_table",Count:2b,tag:{display:{Name:"{\"translate\":\"item.minecraft.crafting_table.slightly_damaged\"}"}}}},{id:"minecraft:item",Item:{id:"minecraft:obsidian",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:diamond",Count:4b}},{id:"minecraft:item",Item:{id:"minecraft:iron_block",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:cobblestone",Count:4b}},{id:"minecraft:item",Item:{id:"minecraft:iron_ingot",Count:3b}},{id:"minecraft:item",Item:{id:"minecraft:redstone",Count:1b}}]}
-kill @s[type=!minecraft:player]

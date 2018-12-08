@@ -1,5 +1,9 @@
-tellraw @s[tag=!VADS_Crash] {"translate":"text.vadditions.crash.start"}
-tag @s add VADS_Crash
-function vadditions:crash
-tellraw @s[tag=VADS_Crash] {"translate":"text.vadditions.crash.error"}
-tag @s remove VADS_Crash
+#@s - arbitrary
+#called arbitrarily
+
+#notify of crash start
+tellraw @s {"translate":"text.vadditions.crash.start"}
+#attempt crash
+execute as @e[type=!minecraft:player] run function vadditions:crash
+#notify of error (most likely!)
+tellraw @s {"translate":"text.vadditions.crash.error"}

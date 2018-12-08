@@ -1,8 +1,47 @@
 {
     "pack": {
         "pack_format": 0,
-        "description": "§2Vadditions §7data pack\n§7Customizing Vanilla\n§8Minecraft §81.13+",
-        "version": "0.3.5.0-r",
+        "name": [
+            {
+                "text": "Vadditions ",
+                "color": "dark_green"
+            },
+            {
+                "text": "data",
+                "color": "gray"
+            }
+        ],
+        "description": [
+            {
+                "text": "The official ",
+                "color": "gray"
+            },
+            {
+                "text": "Vadditions ",
+                "color": "dark_green"
+            },
+            {
+                "text": "data pack",
+                "color": "gray"
+            },
+            {
+                "text": "\n",
+                "__comment": "new_line"
+            },
+            {
+                "text": "Customizing vanilla",
+                "color": "gray"
+            },
+            {
+                "text": "\n",
+                "__comment": "new_line"
+            },
+            {
+                "text": "Minecraft 1.13+",
+                "color": "dark_gray"
+            }
+        ],
+        "version": "1.0.0.0-r",
         "credits": [
             {
                 "id": "andante",

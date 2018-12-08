@@ -1,0 +1,25 @@
+{
+  "parent": "vadditions:root",
+  "display": {
+    "icon": {
+      "item": "minecraft:armor_stand"
+    },
+    "title": {
+      "translate": "advancements.vadditions.pose.title",
+      "color": "gray"
+    },
+    "description": {
+      "translate": "advancements.vadditions.pose.description",
+      "color": "gray"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

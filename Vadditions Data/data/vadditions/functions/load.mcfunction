@@ -1,8 +1,11 @@
+#@s - console
+#called by #minecraft:load
+
 #notify of reload
 execute store result score DataPackCount VADS_ResultCount run datapack list enabled
 execute if score DataPackCount VADS_ResultCount matches ..1 run tellraw @a {"translate":"text.vadditions.chat.vanilla_is_disabled"}
 execute store success score EnableVanilla VADS_SuccessChck run datapack enable vanilla
-execute if score EnableVanilla VADS_SuccessChck matches 1 run tellraw @a {"translate":"text.vadditions.chat.enabled_vanilla"}
+execute if score EnableVanilla VADS_SuccessChck matches 1 run tellraw @a {"translate":"text.vadditions.chat.enabled_vanilla","clickEvent":{"action":"open_url","value":"https://minecraft.net"}}
 execute if score EnableVanilla VADS_SuccessChck matches 0 run tellraw @a {"translate":"text.vadditions.chat.loaded_pack","clickEvent":{"action":"open_url","value":"https://vadditions-datapack.wikia.com"}}
 #add objectives
 scoreboard objectives add VADS_WpnRngdTm dummy {"translate":"text.scoreboard.vadditions.rangedtime"}
@@ -22,7 +25,6 @@ scoreboard objectives add VADS_DeathCheck minecraft.custom:minecraft.deaths {"tr
 scoreboard objectives add VADS_HealthCheck dummy {"translate":"text.scoreboard.vadditions.healthcheck"}
 scoreboard objectives add VADS_SquidKills minecraft.killed:minecraft.squid {"translate":"text.scoreboard.vadditions.squidkills"}
 scoreboard objectives add VADS_CrouchCMs minecraft.custom:crouch_one_cm {"translate":"text.scoreboard.vadditions.crouch_cms"}
-scoreboard objectives add VADS_OreEntDens dummy {"translate":"text.scoreboard.vadditions.oreentitydensity"}
 scoreboard objectives add VADS_FreezeTimer dummy {"translate":"text.scoreboard.vadditions.freezetimer"}
 scoreboard objectives add VADS_FrzUseTimer dummy {"translate":"text.scoreboard.vadditions.freezeusetimer"}
 scoreboard objectives add VADS_HealthDef health {"translate":"text.scoreboard.vadditions.healthdefault"}
@@ -53,11 +55,12 @@ scoreboard objectives add VADS_XPOrbValue dummy {"translate":"text.scoreboard.va
 scoreboard objectives add VADS_XPOrbValueS dummy {"translate":"text.scoreboard.vadditions.experienceorbvalue.sum"}
 scoreboard objectives add VADS_Independent dummy {"translate":"text.scoreboard.vadditions.variable.independent"}
 scoreboard objectives add VADS_Swim minecraft.custom:minecraft.swim_one_cm {"translate":"text.scoreboard.vadditions.swim_one_cm"}
-scoreboard objectives add VADS_TradeCheck minecraft.custom:minecraft.traded_with_villager {"translate":"text.scoreboard.vadditions.traded_with_villager"}
 scoreboard objectives add VADS_SmltryCnt dummy {"translate":"text.scoreboard.vadditions.smeltrycount"}
-scoreboard objectives add VADS_PotCnt dummy {"translate":"text.scoreboard.vadditions.bonsaipotcount"}
+scoreboard objectives add VADS_BnsPotCnt dummy {"translate":"text.scoreboard.vadditions.bonsaipotcount"}
 scoreboard objectives add VADS_TagCount dummy {"translate":"text.scoreboard.vadditions.tagcount"}
 scoreboard objectives add VADS_BPDirtCount dummy {"translate":"text.scoreboard.vadditions.bonsaipotdirtcount"}
+scoreboard objectives add VADS_ExtrctrCnt dummy {"translate":"text.scoreboard.vadditions.sandextractorcount"}
+scoreboard objectives add VADS_Count dummy {"translate":"text.scoreboard.vadditions.count"}
 
 execute unless score VersionNum-Builds VADS_Overall matches 12.. run scoreboard objectives remove VADS_RndProc
 execute unless score VersionNum-Builds VADS_Overall matches 15.. run scoreboard objectives remove VADS_StckMltplr
@@ -66,6 +69,11 @@ execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard 
 execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MineCarrot
 execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MinePotato
 execute unless score VersionNum-Builds VADS_Overall matches 22.. run scoreboard objectives remove VADS_MineBeets
+execute unless score VersionNum-Builds VADS_Overall matches 24.. run scoreboard objectives remove VADS_OreEntDens
+execute unless score VersionNum-Builds VADS_Overall matches 24.. run scoreboard objectives remove VADS_PotCnt
+execute unless score VersionNum-Builds VADS_Overall matches 24.. run bossbar remove vads:status/item_recharge
+
+execute unless score VersionNum-Builds VADS_Overall matches 23.. run tag @e[tag=VADS_FireStand,tag=VADS_OreEntity] remove VADS_FireStand
 
 #gamerules and other general commands
 recipe give @a *
@@ -77,27 +85,18 @@ team add VADS_NoCollision {"translate":"text.team.vadditions.nocollision"}
 team modify VADS_NoCollision seeFriendlyInvisibles false
 team modify VADS_NoCollision friendlyFire false
 team modify VADS_NoCollision collisionRule never
-#bossbars
-bossbar add vads:status/item_recharge {"translate":"text.item.recharging.elipsis"}
-bossbar set vads:status/item_recharge color red
-bossbar set vads:status/item_recharge style notched_10
-bossbar set vads:status/item_recharge max 100
 
-bossbar add vads:status/bosshealth/white_castle_master {"translate":"text.bossbar.bosshealth.white_castle_master"}
-bossbar set vads:status/bosshealth/white_castle_master max 750
-bossbar set vads:status/bosshealth/white_castle_master color blue
-bossbar set vads:status/bosshealth/white_castle_master style notched_20
+bossbar add vadditions:status/bosshealth/white_castle_master {"translate":"text.bossbar.bosshealth.white_castle_master"}
+bossbar set vadditions:status/bosshealth/white_castle_master max 750
+bossbar set vadditions:status/bosshealth/white_castle_master color blue
+bossbar set vadditions:status/bosshealth/white_castle_master style notched_20
 #update messages
 scoreboard players operation VersionNum-Builds.Prev VADS_Overall = VersionNum-Builds VADS_Overall
-scoreboard players set VersionNum-Builds VADS_Overall 22
-execute if score VersionNum-Builds.Prev VADS_Overall < VersionNum-Builds VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/Vadditions/releases"}}
+scoreboard players set VersionNum-Builds VADS_Overall 24
+execute if score VersionNum-Builds.Prev VADS_Overall < VersionNum-Builds VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
 scoreboard players reset VersionNum-Builds.Prev VADS_Overall
-#initial scores
-execute unless score Hardmode VADS_Overall matches 0.. run scoreboard players set Hardmode VADS_Overall 0
-execute as @a unless score @s VADS_ItemCool matches 0.. run scoreboard players set @s VADS_ItemCool 110
-execute as @a unless score @s VADS_UseCOAS matches 0.. run scoreboard players set @s VADS_UseCOAS 0
-execute as @a unless score @s VADS_UseIronHoe matches 0.. run scoreboard players set @s VADS_UseIronHoe 0
 
+#initial scores
 scoreboard players set Random2 VADS_Random2 100011001
 scoreboard players set Random1 VADS_Random2 100
 scoreboard players set @a VADS_Random2 100

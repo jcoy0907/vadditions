@@ -1,0 +1,25 @@
+{
+  "parent": "vadditions:root",
+  "display": {
+    "icon": {
+      "item": "minecraft:crafting_table"
+    },
+    "title": {
+      "translate": "advancements.vadditions.customcrafting.root.title",
+      "color": "gray"
+    },
+    "description": {
+      "translate": "advancements.vadditions.customcrafting.root.description",
+      "color": "gray"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

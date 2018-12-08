@@ -13,6 +13,7 @@
                 { "predicate": {"damaged": 0, "damage": 0.16}, "model": "vadditions:item/stones/mythical"},
             
                 { "predicate": {"damaged": 0, "damage": 0.20}, "model": "vadditions:item/staffs/levitation"},
+                { "predicate": {"damaged": 0, "damage": 0.24}, "model": "vadditions:item/staffs/unsightbereness"},
                 { "predicate": {"damaged": 1, "damage": 0}, "model": "vadditions:item/blank/carrot_on_a_stick"}				
         ]
 }

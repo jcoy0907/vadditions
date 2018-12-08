@@ -1,4 +1,4 @@
-particle minecraft:block minecraft:diamond_block ~ ~ ~ .1 .25 .1 .05 30 force @a
+particle minecraft:block minecraft:diamond_block ~ ~ ~ .1 .25 .1 .05 30 normal @a
 setblock ~ ~ ~ minecraft:air
 kill @e[type=minecraft:item,distance=..1,nbt={Item:{id:"minecraft:stone_slab"}}]
 kill @e[type=minecraft:item,distance=..1,nbt={Item:{id:"minecraft:redstone_torch"}}]

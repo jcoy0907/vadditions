@@ -7,8 +7,40 @@ execute as @e[tag=VADS_Turn] at @s run tp @s ~ ~ ~ ~1.5 0
 execute if score Second_150 VADS_Time matches 150 run title @a[scores={VADS_ItemCool=110}] actionbar {"translate":"text.vadditions.bug_report"}
 gamerule sendCommandFeedback true
 
+#initial scores
+execute unless score Hardmode VADS_Overall matches 0.. run scoreboard players set Hardmode VADS_Overall 0
+execute as @a unless score @s VADS_ItemCool matches 0.. run scoreboard players set @s VADS_ItemCool 110
+execute as @a unless score @s VADS_UseCOAS matches 0.. run scoreboard players set @s VADS_UseCOAS 0
+execute as @a unless score @s VADS_UseIronHoe matches 0.. run scoreboard players set @s VADS_UseIronHoe 0
+
+#brightness
+execute unless score Daytime VADS_Overall matches 13000..23400 as @e[tag=VADS_FireStand,scores={VADS_Fire=..10}] run data merge entity @s {Invulnerable:1,Marker:1,Fire:20s}
+
+#custom enchants
+    #freezing
+execute at @s[nbt={SelectedItem:{tag:{Enchantments:[{id:"vadditions:freezing"}]}}}] run particle minecraft:block minecraft:packed_ice ~ ~ ~ .5 1 .5 0 2 normal
+execute at @s[nbt={Inventory:[{Slot:-106b,tag:{Enchantments:[{id:"vadditions:freezing"}]}}]}] run particle minecraft:block minecraft:packed_ice ~ ~ ~ .5 1 .5 0 2 normal
+
+#pre-process tagging
+tag @e[tag=VADS_LightField] add VADS_Field
+
+tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:oak_sapling"}}] add VADS_Random
+tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:spruce_sapling"}}] add VADS_Random
+tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:birch_sapling"}}] add VADS_Random
+tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:acacia_sapling"}}] add VADS_Random
+tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:jungle_sapling"}}] add VADS_Random
+tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:dark_oak_sapling"}}] add VADS_Random
+tag @e[tag=!VADS_Random,tag=VADS_BonsaiPot] add VADS_Random
+tag @e[tag=!VADS_Random,tag=VADS_SandExtractor] add VADS_Random
+tag @e[tag=!VADS_Random,tag=VADS_Field] add VADS_Random
+tag @e[tag=!VADS_Random,type=minecraft:creeper] add VADS_Random
+
 #random
-execute as @e[tag=!VADS_NoRandom] run function vadditions:random
+scoreboard players reset * VADS_Random
+execute as @a run function vadditions:random
+execute as @e[tag=VADS_Random] run function vadditions:random
+execute as @e[type=minecraft:villager,tag=!VADS_VillageProcessed] run function vadditions:random
+execute as @e[tag=VADS_OreEntity,tag=!VADS_NoRandom,scores={VADS_Age=..2}] run function vadditions:random
     #overall random
 scoreboard players set Overall VADS_Random2 100
 scoreboard players add Overall VADS_Random 0
@@ -17,34 +49,14 @@ scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
 scoreboard players operation Overall VADS_Random = Random2 VADS_Random2
 scoreboard players operation Overall VADS_Random %= Random1 VADS_Random2
 scoreboard players operation Overall VADS_Random %= Overall VADS_Random2
-    #slime random
-scoreboard players set IslandCheck.Slime VADS_Random2 100
-scoreboard players add IslandCheck.Slime VADS_Random 0
-scoreboard players operation Random1 VADS_Random2 *= Random2 VADS_Random2
-scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
-scoreboard players operation IslandCheck.Slime VADS_Random = Random2 VADS_Random2
-scoreboard players operation IslandCheck.Slime VADS_Random %= Random1 VADS_Random2
-scoreboard players operation IslandCheck.Slime VADS_Random %= IslandCheck.Slime VADS_Random2
-    #field random
-scoreboard players set Fields VADS_Random2 100
-scoreboard players add Fields VADS_Random 0
-scoreboard players operation Random1 VADS_Random2 *= Random2 VADS_Random2
-scoreboard players operation Random1 VADS_Random2 %= Random2 VADS_Random2
-scoreboard players operation Fields VADS_Random = Random2 VADS_Random2
-scoreboard players operation Fields VADS_Random %= Random1 VADS_Random2
-scoreboard players operation Fields VADS_Random %= Fields VADS_Random2
 
 #structures
     #kill ore entities without blocks
-execute as @e[type=minecraft:armor_stand,tag=VADS_OreEntity,tag=VADS_OreTransanium] at @s unless block ~ ~ ~ #structures:holds_ore unless block ~ ~ ~ minecraft:stone run function vadditions:ores/despawn/transanium
-execute as @e[type=minecraft:armor_stand,tag=VADS_OreEntity] at @s unless block ~ ~ ~ #structures:holds_ore run kill @s[type=!minecraft:player]
-    #kill ore entities with other ore entities in the same block
-scoreboard players set @e[tag=VADS_OreEntity,type=minecraft:armor_stand] VADS_OreEntDens 0
-execute as @e[type=minecraft:armor_stand,tag=VADS_OreEntity] at @s align xyz run scoreboard players add @e[type=minecraft:armor_stand,dx=.5,dy=.5,dz=.5,tag=VADS_OreEntity] VADS_OreEntDens 1
-execute as @e[type=minecraft:armor_stand,tag=VADS_OreEntity,tag=VADS_OreTransanium,scores={VADS_OreEntDens=2..}] at @s run function vadditions:ores/despawn/noitem/transanium
-
-scoreboard players add @e[type=minecraft:armor_stand,tag=VADS_OreEntity] VADS_Age 1
-execute as @e[type=minecraft:armor_stand,tag=VADS_OreEntity,tag=VADS_OreTransanium,scores={VADS_Age=..2,VADS_Random=1..25}] at @s align xyz run function vadditions:ores/despawn/noitem/transanium
+execute as @e[tag=VADS_OreEntity,tag=VADS_OreTransanium] at @s unless block ~ ~ ~ #structures:holds_ore unless block ~ ~ ~ minecraft:stone run function vadditions:ores/despawn/transanium
+execute as @e[tag=VADS_OreEntity] at @s unless block ~ ~ ~ #structures:holds_ore run kill @s[type=!minecraft:player]
+    #randomise ore spawning
+scoreboard players add @e[tag=VADS_OreEntity] VADS_Age 1
+execute as @e[tag=VADS_OreEntity,tag=VADS_OreTransanium,scores={VADS_Age=..2,VADS_Random=1..25}] at @s align xyz run function vadditions:ores/despawn/no_item/transanium
     #run room spawning
 execute as @e[tag=VADS_SpawnRoom] at @s run function #structures:spawn_rooms
 
@@ -68,16 +80,12 @@ execute store result score Daytime VADS_Overall run time query daytime
 scoreboard players reset * VADS_HealthCheck
 execute as @e[type=!minecraft:player,tag=!VADS_CustomCrafter] store result score @s VADS_HealthCheck run data get entity @s Health
     #weapons
-execute as @a[scores={VADS_ItemCool=..109}] run tag @s add VADS_RechargeBar
-execute as @a[scores={VADS_ItemCool=110..}] run tag @s remove VADS_RechargeBar
-bossbar set vads:status/item_recharge players @a[tag=VADS_RechargeBar]
-execute as @a store result bossbar vads:status/item_recharge value run scoreboard players get @p VADS_ItemCool
 execute as @a[scores={VADS_ItemCool=0..99}] run title @s actionbar [{"translate":"text.item.recharging.colon"}," ",{"score":{"objective":"VADS_ItemCool","name":"@s"},"color":"dark_red"},{"color":"dark_red","text":"%"}]
 title @a[scores={VADS_ItemCool=100..109}] actionbar {"translate":"text.item.recharging.done"}
 
 tag @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}}] remove VADS_WeaponNoActionbar
 title @a[scores={VADS_ItemCool=110},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}}] actionbar {"translate":"text.item.status.ready"}
-execute as @a[nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}},tag=!VADS_WeaponNoActionbar] run title @s actionbar ""
+execute as @a[nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}},tag=!VADS_WeaponNoActionbar,scores={VADS_ItemCool=110}] run title @s actionbar ""
 execute as @a[nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{hasCooldown:1b}}},tag=!VADS_WeaponNoActionbar] run tag @s add VADS_WeaponNoActionbar
     #seconds
 scoreboard players add Tick VADS_Time 1
@@ -109,9 +117,9 @@ execute store result score 45 VADS_SecondTime run scoreboard players get Second_
 execute store result score 60 VADS_SecondTime run scoreboard players get Second_60 VADS_Time
 execute store result score 150 VADS_SecondTime run scoreboard players get Second_150 VADS_Time
     #ticking scores
-scoreboard players add @e[type=minecraft:armor_stand,tag=VADS_WeaponEntity] VADS_WpnRngdTm 1
+scoreboard players add @e[tag=VADS_WeaponEntity] VADS_WpnRngdTm 1
 scoreboard players add @a[scores={VADS_ItemCool=..109}] VADS_ItemCool 1
-scoreboard players add @e[type=minecraft:armor_stand,tag=VADS_FreezeStand,scores={VADS_FreezeTimer=..45}] VADS_FreezeTimer 1
+scoreboard players add @e[tag=VADS_FreezeStand,scores={VADS_FreezeTimer=..45}] VADS_FreezeTimer 1
 scoreboard players add @e[tag=VADS_ConfusedEffect] VADS_CnfsedTime 1
 scoreboard players add @e[type=!minecraft:item,type=!minecraft:player,tag=!VADS_Entity] VADS_Age 1
 scoreboard players set @a[scores={VADS_DeathCheck=1..}] VADS_DeathCheck 0
@@ -175,7 +183,8 @@ tag @e[type=minecraft:trident,tag=!VADS_IsSprite] add VADS_IsSprite
 tag @e[type=minecraft:wither_skull,tag=!VADS_IsSprite] add VADS_IsSprite
 
     # No Weapon Damage
-tag @e[type=minecraft:armor_stand,tag=VADS_IsSprite,tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
+tag @e[tag=VADS_IsSprite,tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
+tag @e[type=minecraft:villager,tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
 tag @a[tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
 
     # Undead
@@ -207,13 +216,6 @@ tag @a[scores={VADS_Fire=1..},tag=VADS_NotOnFire] remove VADS_NotOnFire
 execute as @a[scores={VADS_Fire=-20},tag=!VADS_NotOnFire,gamemode=!creative,gamemode=!spectator] run title @s actionbar {"translate":"text.vadditions.actionbar.firestatus.notonfire"}
 tag @a[scores={VADS_Fire=-20},tag=!VADS_NotOnFire] add VADS_NotOnFire
 
-#trading with villagers chat
-execute as @a[scores={VADS_TradeCheck=1..,VADS_Random=1..30}] run tellraw @s [{"translate":"entity.minecraft.villager","color":"dark_gray"},{"text":": ","color":"dark_gray"},{"translate":"text.vadditions.villager.trade.1","color":"gray"}]
-execute as @a[scores={VADS_TradeCheck=1..,VADS_Random=31..60}] run tellraw @s [{"translate":"entity.minecraft.villager","color":"dark_gray"},{"text":": ","color":"dark_gray"},{"translate":"text.vadditions.villager.trade.2","color":"gray"}]
-execute as @a[scores={VADS_TradeCheck=1..,VADS_Random=61..90}] run tellraw @s [{"translate":"entity.minecraft.villager","color":"dark_gray"},{"text":": ","color":"dark_gray"},{"translate":"text.vadditions.villager.trade.3","color":"gray"}]
-execute as @a[scores={VADS_TradeCheck=1..,VADS_Random=91..100}] run tellraw @s [{"translate":"entity.minecraft.villager","color":"dark_gray"},{"text":": ","color":"dark_gray"},{"translate":"text.vadditions.villager.trade.regional","color":"gray"}]
-scoreboard players set @a[scores={VADS_TradeCheck=1..}] VADS_TradeCheck 0
-
 #patches
     #new advancement ids
 advancement grant @a[advancements={minecraft:adventure/eat_fish=true}] only minecraft:adventure/eat_cooked_fish
@@ -229,8 +231,8 @@ execute as @e[tag=VADS_LookAtNearest] at @s facing entity @p[gamemode=!spectator
 execute as @e[type=minecraft:pig] at @s if entity @a[distance=..16,nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1}}},limit=1] run data merge entity @s {Attributes:[{Name:"generic.followRange",Base:0.0d}]}
 execute as @e[type=minecraft:pig] at @s unless entity @a[distance=..16,nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1}}},limit=1] run data merge entity @s {Attributes:[{Name:"generic.followRange",Base:16.0d}]}
     #carrot on a stick use patch
-scoreboard players set @a[scores={VADS_UseCOAS=2..}] VADS_UseCOAS 0
-execute as @a[scores={VADS_UseCOAS=1..}] unless entity @s[nbt={SelectedItem:{tag:{isStaff:1b}}}] unless entity @s[nbt={SelectedItem:{tag:{isWeapon:1b}}}] run scoreboard players set @s VADS_UseCOAS 0
+#scoreboard players set @a[scores={VADS_UseCOAS=2..}] VADS_UseCOAS 0
+execute as @a[scores={VADS_UseCOAS=1..}] unless entity @s[nbt={SelectedItem:{tag:{isStaff:1b}}}] unless entity @s[nbt={SelectedItem:{tag:{isWeapon:1b}}}] unless entity @s[nbt={SelectedItem:{tag:{isFood:1b}}}] run scoreboard players set @s VADS_UseCOAS 0
 
 # Initial
 tellraw @a[tag=!VADS_JoinedOnce] [{"translate":"text.vadditions.chat.firstjoin"},{"text":"\n"},{"translate":"text.vadditions.chat.firstjoin.warning"}]
@@ -295,7 +297,7 @@ replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:cactuthorn"}}}
     # Hellstone
 replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:hellstone"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:3,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10},{id:"minecraft:fire_aspect",lvl:2},{id:"minecraft:sharpness",lvl:5}],display:{Name:"{\"translate\":\"item.vadditions.weapon.hellstone\"}",Lore:["§7Type: §cRanged Weapon","§7Tier:  §6Platinum","","§7Attributes:"," §8Piercing"," §8Flame"," §8Imploding","","§7When in main hand:"," §27 Second Weapon Cooldown"," §29 Attack Damage Per Damage Tick"," §2Travels 15.25 Blocks (Total)"]},HideFlags:1,VADS_Weapon:"vadditions:hellstone",weaponAttributes:["piercing","flame"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
     # IHD
-replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:1,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10}],display:{Name:"{\"translate\":\"item.vadditions.weapon.ihd\"}",Lore:["§7Type: §cHoming Weapon","§7Tier:  §6I","","§7Attributes:"," §8Homing"," §8Poison"," §cDoesn't attack undead"," §cDoesn't kill the entity","","§7When in main hand:"," §27 Second Weapon Cooldown"," §20.5 Attack Damage Per Damage Tick §7(Poison Effect)"," §2Travels for 30 seconds"]},HideFlags:1,VADS_Weapon:"vadditions:ihd",weaponAttributes:["homing","poison","noundead","doesntkill"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:ihd"}}}] weapon.mainhand minecraft:carrot_on_a_stick{Unbreakable:1,Damage:1,Processed:1,Enchantments:[{id:"minecraft:unbreaking",lvl:10}],display:{Name:"{\"translate\":\"item.vadditions.weapon.ihd\"}",Lore:["§7Type: §cHoming Weapon","§7Tier:  §6I","","§7Attributes:"," §8Homing"," §8Poison"," §cDoesn't attack undead"," §cDoesn't kill the entity","","§7When in main hand:"," §27 Second Weapon Cooldown"," §20.5 Attack Damage Per Damage Tick §7(Poison Effect)"," §2Travels for 30 seconds"]},HideFlags:1,VADS_Weapon:"vadditions:ihd",weaponAttributes:["homing","poison","noundead","doesntkill"],isWeapon:1b,hasCooldown:1b,Unbreakable:1,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.0d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
     # Transanium Sword
 replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:transanium_sword"}}}] weapon.mainhand minecraft:golden_axe{Unbreakable:1,Damage:1,display:{Name:"{\"translate\":\"item.vadditions.transanium_sword\"}"},Enchantments:[{id:"minecraft:sharpness",lvl:1},{id:"minecraft:knockback",lvl:5},{id:"vadditions:freezing",lvl:1}],HideFlags:1,isWeapon:1b,VADS_Weapon:"vadditions:transanium_sword",hasCustomEnchant:1b,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-1.5d,Slot:"mainhand",AttributeName:"generic.attackSpeed",Operation:0,Name:"attackSpeed"}]}
 
@@ -310,3 +312,6 @@ replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:obbane"}}}] we
 
 # Bonsai Pot
 replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:bonsai_pot"}}}] weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:12,display:{Name:"{\"translate\":\"block.vadditions.bonsai_pot\"}"},isMachine:1b,VADS_Machine:"vadditions:bonsai_pot"}
+
+# Sand Extractor
+replaceitem entity @a[nbt={SelectedItem:{tag:{process:"vadditions:sand_extractor"}}}] weapon.mainhand minecraft:diamond_hoe{Unbreakable:1,Damage:16,display:{Name:"{\"translate\":\"block.vadditions.sand_extractor\"}"},isMachine:1b,VADS_Machine:"vadditions:sand_extractor"}

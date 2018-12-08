@@ -1,6 +1,6 @@
-particle minecraft:poof ~ ~ ~ 2 0 0 0 100 force
-particle minecraft:poof ~ ~ ~ 0 0 2 0 100 force
-execute as @s[nbt={SelectedItem:{tag:{weaponAttributes:["levitation.3"]}}}] at @s run particle minecraft:totem_of_undying ~ ~1 ~ .2 .5 .2 0 100 force
+particle minecraft:poof ~ ~ ~ 2 0 0 0 100 normal
+particle minecraft:poof ~ ~ ~ 0 0 2 0 100 normal
+execute as @s[nbt={SelectedItem:{tag:{weaponAttributes:["levitation.3"]}}}] at @s run particle minecraft:totem_of_undying ~ ~1 ~ .2 .5 .2 0 100 normal
 
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 2 1
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 .5 1

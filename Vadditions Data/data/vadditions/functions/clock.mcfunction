@@ -3,8 +3,6 @@
 
 #general
 tag @a[tag=VADS_Crash] remove VADS_Crash
-#give players root advancement
-advancement grant @a[advancements={vadditions:root=false}] only vadditions:root
 #check for joining players and run commands
 execute as @a[scores={VADS_LeaveGame=1..}] run function #minecraft:load
 execute as @a[scores={VADS_LeaveGame=1..}] run scoreboard players set @s VADS_LeaveGame 0

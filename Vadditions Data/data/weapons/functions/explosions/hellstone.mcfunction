@@ -1,4 +1,4 @@
-particle minecraft:explosion ~ ~ ~ 1 1 1 .1 30 force
+particle minecraft:explosion ~ ~ ~ 1 1 1 .1 30 normal
 particle minecraft:block minecraft:nether_quartz_ore ~ ~ ~ 2 2 2 .8 750
 particle minecraft:flame ~ ~ ~ 2 2 2 .8 750
 playsound minecraft:entity.generic.explode player @a ~ ~ ~

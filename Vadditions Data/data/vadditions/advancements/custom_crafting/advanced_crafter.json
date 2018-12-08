@@ -1,0 +1,25 @@
+{
+  "parent": "vadditions:custom_crafting/basic_crafter",
+  "display": {
+    "icon": {
+      "item": "minecraft:obsidian"
+    },
+    "title": {
+      "translate": "advancements.vadditions.customcrafting.advanced.title",
+      "color": "gray"
+    },
+    "description": {
+      "translate": "advancements.vadditions.customcrafting.advanced.description",
+      "color": "gray"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

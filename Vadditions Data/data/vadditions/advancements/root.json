@@ -4,10 +4,12 @@
       "item": "minecraft:oak_leaves"
     },
     "title": {
-      "translate": "advancements.vadditions.root.title"
+      "translate": "advancements.vadditions.root.title",
+      "color": "gray"
     },
     "description": {
-      "translate": "advancements.vadditions.root.description"
+      "translate": "advancements.vadditions.root.description",
+      "color": "gray"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,8 +18,8 @@
     "background": "minecraft:textures/block/oak_log.png"
   },
   "criteria": {
-    "impossible": {
-      "trigger": "minecraft:impossible"
+    "automatic": {
+      "trigger": "minecraft:location"
     }
   }
 }

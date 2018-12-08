@@ -1,0 +1,33 @@
+{
+  "parent": "vadditions:technical_chain/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:emerald"
+    },
+    "title": {
+      "translate": "advancements.vadditions.technical.trade.title",
+      "color": "gray"
+    },
+    "description": {
+      "translate": "advancements.vadditions.technical.adventure.trade.description",
+      "color": "gray"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "traded": {
+      "trigger": "minecraft:villager_trade"
+    }
+  },
+  "requirements": [
+    [
+      "traded"
+    ]
+  ],
+  "rewards": {
+      "function": "vadditions:trade"
+  }
+}

@@ -1,6 +1,9 @@
 #@s - uncrafter
-#run by hardmode:activate
-tellraw @a [{"selector":"@a[distance=...5,gamemode=!creative,gamemode=!spectator]"},{"translate":"text.vadditions.death.hardmode_activation"}]
+#called by hardmode:activate
+
+#kill player
 gamerule showDeathMessages false
-kill @a[distance=...5,gamemode=!creative,gamemode=!spectator]
+kill @s
 gamerule showDeathMessages true
+#post message in chat
+tellraw @a [{"selector":"@s"},{"translate":"text.vadditions.death.hardmode_activation"}]

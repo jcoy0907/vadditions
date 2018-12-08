@@ -1,0 +1,33 @@
+{
+  "parent": "vadditions:technical_chain/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:red_bed"
+    },
+    "title": {
+      "translate": "advancements.vadditions.technical.sleeping.title",
+      "color": "gray"
+    },
+    "description": {
+      "translate": "advancements.vadditions.technical.sleeping.description",
+      "color": "gray"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": "true"
+  },
+  "criteria": {
+    "sleep_in_bed": {
+      "trigger": "minecraft:slept_in_bed"
+    }
+  },
+  "requirements": [
+    [
+      "sleep_in_bed"
+    ]
+  ],
+  "rewards": {
+      "function": "vadditions:sleep/run"
+  }
+}

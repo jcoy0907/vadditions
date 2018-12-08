@@ -1,5 +1,5 @@
 #sky
-execute unless block ~ 62 ~ minecraft:water unless block ~ 61 ~ minecraft:water unless block ~ 60 ~ minecraft:water unless block ~ 59 ~ minecraft:water unless block ~ 58 ~ minecraft:water unless block ~ 33 ~ minecraft:gravel if score IslandCheck.Slime VADS_Random matches 1..20 if block ~ 41 ~ #vadditions:structures/valid_spawn if block ~ 128 ~ #minecraft:air if blocks ~ 128 ~ ~1 118 ~1 ~-1 128 ~-1 all run function structures:spawn/sky/island/slime
+execute unless block ~ 62 ~ minecraft:water unless block ~ 61 ~ minecraft:water unless block ~ 60 ~ minecraft:water unless block ~ 59 ~ minecraft:water unless block ~ 58 ~ minecraft:water unless block ~ 33 ~ minecraft:gravel if score Overall VADS_Random matches 1..20 if block ~ 41 ~ #vadditions:structures/valid_spawn if block ~ 128 ~ #minecraft:air if blocks ~ 128 ~ ~1 118 ~1 ~-1 128 ~-1 all run function structures:spawn/sky/island/slime
 
 #surface/ocean
 execute if block ~ 69 ~ minecraft:snow if block ~ 25 ~ #vadditions:structures/valid_spawn run function structures:spawn/surface/house
