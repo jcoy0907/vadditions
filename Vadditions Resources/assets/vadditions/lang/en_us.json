@@ -112,6 +112,8 @@
   "text.vadditions.villager.trade.3": "§7Hurrrr",
   "text.vadditions.villager.trade.regional": "§7Sure",
   "text.vadditions.update": "§3Checking §3for §3updates...\n§aUpdated! §aCheck §athe §aGitHub §apage, §aby §aclicking §ahere, §afor §amore §ainformation.",
+  "text.vadditions.downdate": "§3Checking §3for §3updates...\n§cYou are downdating! This is not supported, disabling pack...",
+  "text.vadditions.new_build_system": "§3Checking §3for §3updates...\n§aUpdated! The new build system is now activated.",
   "text.vadditions.bug_report": "§aV§2a§ad§2d§ai§2t§ai§2o§an§2s§r§7: §cFound bugs? Message me on Discord, 'Andante#7922'",
   "text.vadditions.generating_terrain": "§aV§2a§ad§2d§ai§2t§ai§2o§an§2s§r§7: §eYou may lag while new terrain is being generated",
   "text.vadditions.generating_terrain.structures": "§aV§2a§ad§2d§ai§2t§ai§2o§an§2s§r§7: §eYou may lag while structures are being generated",

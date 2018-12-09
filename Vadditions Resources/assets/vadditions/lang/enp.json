@@ -112,6 +112,8 @@
   "text.vadditions.villager.trade.3": "§7Hurrrr",
   "text.vadditions.villager.trade.regional": "§7Why haven't the Normans invaded yet?",
   "text.vadditions.update": "§3Seeking §3new things...\n§aGot new things! §aSeek §athe §aGitHub §apage, §aby §apressing §ahere, §afor §amore §ainformation.",
+  "text.vadditions.downdate": "§3Checking §3for §3new things...\n§cGot old things! This is not liked, turning off pack...",
+  "text.vadditions.new_build_system": "§3Checking §3for §3new things...\n§aGot new things! The new build thing is now turned on.",
   "text.vadditions.bug_report": "§aV§2a§ad§2d§ai§2t§ai§2o§an§2s§r§7: §cFound bugs? Message me on Discord, 'Andante#7922'",
   "text.vadditions.generating_terrain": "§aV§2a§ad§2d§ai§2t§ai§2o§an§2s§r§7: §eYou may lag while new terrain is being generated",
   "text.vadditions.generating_terrain.structures": "§aV§2a§ad§2d§ai§2t§ai§2o§an§2s§r§7: §eYou may lag while structures are being generated",

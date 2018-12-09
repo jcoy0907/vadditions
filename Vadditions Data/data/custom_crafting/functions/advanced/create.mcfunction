@@ -13,4 +13,3 @@ playsound minecraft:block.enchantment_table.use voice @a[distance=..16] ~ ~ ~ 10
 advancement grant @a[distance=..5] only vadditions:custom_crafting/advanced_crafter
 
 kill @s[type=!minecraft:player]
-execute align xyz positioned ~.5 ~ ~.5 run kill @e[type=minecraft:item,distance=...5]

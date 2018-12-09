@@ -19,10 +19,10 @@ execute at @e[scores={VADS_FrzUseTimer=180..198},tag=VADS_WhiteCastleMaster] if 
 execute as @e[tag=VADS_WhiteCastleMaster,tag=!VADS_RanSound,scores={VADS_Random=1..20}] at @s run playsound vadditions:mob/white_castle_master/ambient ambient @a[distance=..16] ~ ~ ~ 100 2 1
 execute as @e[tag=VADS_WhiteCastleMaster,tag=!VADS_RanSound,scores={VADS_Random=1..20}] run tag @s add VADS_RanSound
     #health bar
-execute at @e[tag=VADS_WhiteCastleMaster] unless entity @a[distance=..10] run bossbar set vadditions:status/bosshealth/white_castle_master players none
-execute unless entity @e[tag=VADS_WhiteCastleMaster,limit=1] run bossbar set vadditions:status/bosshealth/white_castle_master players
-execute at @e[tag=VADS_WhiteCastleMaster] run bossbar set vadditions:status/bosshealth/white_castle_master players @a[distance=..10]
-execute at @e[tag=VADS_WhiteCastleMaster] run execute at @p store result bossbar vadditions:status/bosshealth/white_castle_master value run data get entity @e[tag=VADS_WhiteCastleMaster,sort=nearest,limit=1] Health
+execute at @e[tag=VADS_WhiteCastleMaster] unless entity @a[distance=..10] run bossbar set vadditions:boss_health/white_castle_master players none
+execute unless entity @e[tag=VADS_WhiteCastleMaster,limit=1] run bossbar set vadditions:boss_health/white_castle_master players
+execute at @e[tag=VADS_WhiteCastleMaster] run bossbar set vadditions:boss_health/white_castle_master players @a[distance=..10]
+execute at @e[tag=VADS_WhiteCastleMaster] run execute at @p store result bossbar vadditions:boss_health/white_castle_master value run data get entity @e[tag=VADS_WhiteCastleMaster,sort=nearest,limit=1] Health
     #models
 execute as @e[tag=!VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{Damage:20s,Unbreakable:1}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
 execute as @e[tag=VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{Damage:21s,Unbreakable:1}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}

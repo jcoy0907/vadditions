@@ -1,3 +1,6 @@
+#@s - @e[tag=!VADS_FoundMob,type=!minecraft:player]
+#called by mobs:tick
+
 tag @s[type=minecraft:creeper,tag=!VADS_FoundMob] add VADS_ReplaceMob
 tag @s[type=minecraft:enderman,tag=!VADS_FoundMob] add VADS_ReplaceMob
 tag @s[type=minecraft:skeleton,tag=!VADS_FoundMob] add VADS_ReplaceMob

@@ -1,3 +1,6 @@
+#@s - console
+#called by machines:tick
+
 #bonsai pots
     #removal check
 execute as @e[tag=VADS_BonsaiPot] at @s unless block ~ ~ ~ #vadditions:holds/bonsai_pot run function machines:bonsai_pots/remove
@@ -55,9 +58,9 @@ execute at @e[tag=VADS_LazerBottom] run particle minecraft:dolphin ~ ~ ~ .5 .5 .
 execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:ladder",Count:1b},OnGround:1b}] at @s if block ~ ~-1 ~ minecraft:iron_block unless entity @e[tag=VADS_Elevator,distance=..1] align xz run function machines:elevators/create
     #teleporting
         #up
-execute as @e[tag=VADS_ElevatorUp] at @s unless block ~1 ~ ~ minecraft:lever[powered=true] unless block ~-1 ~ ~ minecraft:lever[powered=true] unless block ~ ~ ~1 minecraft:lever[powered=true] unless block ~ ~ ~-1 minecraft:lever[powered=true] positioned ~ ~1 ~ as @a[distance=..1,gamemode=!spectator] at @s if block ~ ~5 ~ minecraft:iron_block run function machines:elevators/teleport_up
+execute as @e[tag=VADS_ElevatorUp] at @s unless block ~1 ~ ~ minecraft:lever[powered=true] unless block ~-1 ~ ~ minecraft:lever[powered=true] unless block ~ ~ ~1 minecraft:lever[powered=true] unless block ~ ~ ~-1 minecraft:lever[powered=true] positioned ~ ~1 ~ as @a[distance=..1,gamemode=!spectator,scores={VADS_ItemCool=100..}] at @s if block ~ ~5 ~ minecraft:iron_block run function machines:elevators/teleport_up
         #down
-execute as @e[tag=VADS_ElevatorDown] at @s unless block ~1 ~ ~ minecraft:lever[powered=true] unless block ~-1 ~ ~ minecraft:lever[powered=true] unless block ~ ~ ~1 minecraft:lever[powered=true] unless block ~ ~ ~-1 minecraft:lever[powered=true] positioned ~ ~1 ~ as @a[distance=..1,gamemode=!spectator] at @s if block ~ ~-7 ~ minecraft:iron_block run function machines:elevators/teleport_down
+execute as @e[tag=VADS_ElevatorDown] at @s unless block ~1 ~ ~ minecraft:lever[powered=true] unless block ~-1 ~ ~ minecraft:lever[powered=true] unless block ~ ~ ~1 minecraft:lever[powered=true] unless block ~ ~ ~-1 minecraft:lever[powered=true] positioned ~ ~1 ~ as @a[distance=..1,gamemode=!spectator,scores={VADS_ItemCool=100..}] at @s if block ~ ~-7 ~ minecraft:iron_block run function machines:elevators/teleport_down
     #general
 execute as @e[tag=VADS_Elevator] at @s unless block ~1 ~ ~ minecraft:lever[powered=true] unless block ~-1 ~ ~ minecraft:lever[powered=true] unless block ~ ~ ~1 minecraft:lever[powered=true] unless block ~ ~ ~-1 minecraft:lever[powered=true] run particle minecraft:bubble_pop ~ ~.5 ~ 0 .5 0 0 10 normal @a
 

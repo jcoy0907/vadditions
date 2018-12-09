@@ -1,3 +1,3 @@
-teleport @s[scores={VADS_ItemCool=100..}] ~ ~6 ~
-playsound minecraft:entity.iron_golem.attack voice @s[scores={VADS_ItemCool=100..}]
-scoreboard players set @s[scores={VADS_ItemCool=100..}] VADS_ItemCool 0
+teleport @s ~ ~6 ~
+playsound minecraft:entity.iron_golem.attack player @a[distance=..10] ~ ~ ~ 100 0 1
+scoreboard players set @s VADS_ItemCool 0
