@@ -1,5 +1,5 @@
 #@s - console
-#called by machines:tick
+#called by #machines:tick
 
 #bonsai pots
     #removal check
