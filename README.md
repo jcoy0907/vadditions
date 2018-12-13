@@ -21,7 +21,7 @@ Contributing
 - We are in need of translators! See this text and think you could do it? Message me on Discord, `Andante#7922`!
 - Anyone good at textures? Anyone? It'd be nice to have a 32x version of the Vadditions resources for the community to have, so if you'd like to do that message me on Discord with your finished result, `Andante#7922`!
 
-CREDITS
+Credits
 -------
 
 - Ideas
