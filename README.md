@@ -7,7 +7,7 @@ Installation
 ------------
 
 - Create a new world before installing `Vadditions`
-  If you are installing `Vadditions` into an existing world, please be aware that this process is irreversible due to world generation mechanics.
+- If you are installing `Vadditions` into an existing world, please be aware that this process is irreversible due to world generation mechanics.
 
 - Click on `Source code (zip)` in the releases section of the Vadditions repository
 - Unzip the downloaded file
