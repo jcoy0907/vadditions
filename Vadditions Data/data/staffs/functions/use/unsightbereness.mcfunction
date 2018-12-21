@@ -1,3 +1,7 @@
+#@s - @a[scores={VADS_UseCOAS=1..,VADS_ItemCool=100..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{VADS_Staff:"vadditions:staff.unsightbereness"}}}]
+#called by staffs:holding
+
+#audiovisuals
 particle minecraft:poof ~ ~ ~ .5 .5 .5 .2 50 normal
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 2 1
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 .5 1
@@ -14,6 +18,7 @@ summon minecraft:item ~ ~ ~ {Motion:[-1.0d,0.5d,-1.0d],Item:{id:"minecraft:rotte
 summon minecraft:item ~ ~ ~ {Motion:[-1.0d,0.5d,1.0d],Item:{id:"minecraft:rotten_flesh",Count:1b},PickupDelay:3000s,Tags:["VADS_Entity","VADS_VisualEntity"]}
 summon minecraft:item ~ ~ ~ {Motion:[1.0d,0.5d,-1.0d],Item:{id:"minecraft:rotten_flesh",Count:1b},PickupDelay:3000s,Tags:["VADS_Entity","VADS_VisualEntity"]}
 
+#effects
 effect clear @s minecraft:blindness
 effect clear @s minecraft:slowness
 effect clear @s minecraft:invisibility

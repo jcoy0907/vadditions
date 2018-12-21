@@ -1,14 +1,12 @@
-#observer notification stands
-execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s if block ~ ~-1 ~ minecraft:observer[powered=true] run effect give @s minecraft:glowing 1 0 true
-execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s if block ~ ~ ~ minecraft:observer[powered=true] run effect give @s minecraft:glowing 1 0 true
+#@s - console
+#called by #entities:tick
 
-execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s unless block ~ ~ ~ minecraft:observer[powered=true] unless block ~ ~-1 ~ minecraft:observer[powered=true] run effect clear @s minecraft:glowing
+#observer notification stands
+execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s run function entities:processes/observer_notification_stands
 #illusioner loot table
 execute as @e[type=minecraft:illusioner,nbt=!{DeathLootTable:"minecraft:entities/illusioner"}] run data merge entity @s {DeathLootTable:"minecraft:entities/illusioner"}
 #damaging snowballs
-execute at @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] run effect give @e[sort=nearest,limit=1,distance=..1.5,tag=!VADS_Undead,tag=!VADS_IsSprite,type=!minecraft:player] minecraft:instant_damage 1 0
-execute at @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] run effect give @e[sort=nearest,limit=1,distance=..1.5,tag=VADS_Undead,tag=!VADS_IsSprite,type=!minecraft:player] minecraft:instant_health 1 0
-execute as @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] at @s if entity @e[sort=nearest,limit=1,distance=..1.5,tag=!VADS_IsSprite,type=!minecraft:player] run tag @s add VADS_DamagingSnowball
+execute as @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] at @s run function entities:processes/damaging_snowballs
 #white castle master
     #freeze effect
 scoreboard players add @e[tag=VADS_WhiteCastleMaster] VADS_FrzUseTimer 1
@@ -26,7 +24,6 @@ execute at @e[tag=VADS_WhiteCastleMaster] run execute at @p store result bossbar
     #models
 execute as @e[tag=!VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{Damage:20s,Unbreakable:1}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
 execute as @e[tag=VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{Damage:21s,Unbreakable:1}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
-
 #effects
     #attribute modifiers
         #l1
@@ -88,7 +85,7 @@ execute as @e[type=minecraft:item] if score @s VADS_Age matches 5960..5979 run d
 execute as @e[type=minecraft:item] if score @s VADS_Age matches 5980..5999 run data merge entity @s {CustomName:"{\"color\":\"red\",\"text\":\"1\"}",CustomNameVisible:1}
 
     # Damaging Minecarts
-execute as @e[type=minecraft:minecart,nbt=!{Motion:[0.0d,0.0d,0.0d]}] at @s if block ~ ~ ~ #minecraft:rails run effect give @e[distance=..1,type=!minecraft:player,tag=!VADS_Undead] minecraft:instant_damage 1 1 true
+execute as @e[type=minecraft:minecart,nbt=!{Motion:[0.0d,0.0d,0.0d]}] at @s if block ~ ~ ~ #minecraft:rails run effect give @e[type=!minecraft:player,distance=..1,tag=!VADS_Undead] minecraft:instant_damage 1 1 true
 
         # Sheep Armour
 tag @e[type=minecraft:sheep,nbt={Sheared:0b}] remove VADS_Sheared
@@ -126,7 +123,7 @@ execute as @e[type=minecraft:turtle,nbt={HasEgg:1b},nbt=!{CustomName:"{\"text\":
 execute as @e[type=minecraft:turtle,nbt={HasEgg:0b,CustomName:"{\"text\":\"Expecting...\"}"}] run data merge entity @s {CustomNameVisible:0,CustomName:""}
 
     # Easymode Processes
-execute if score Hardmode VADS_Overall matches 0 run function entities:processes/mythical_cleric/easymode
+execute as @e[type=minecraft:villager,tag=!VADS_VillageProcessed,tag=!VADS_MythicalCleric] if score Hardmode VADS_Overall matches 0 run function entities:processes/mythical_cleric/easymode
 
     # Hardmode Processes
-execute if score Hardmode VADS_Overall matches 1 run function entities:processes/mythical_cleric/hardmode
+execute as @e[type=minecraft:villager,tag=!VADS_VillageProcessed,tag=!VADS_MythicalCleric] if score Hardmode VADS_Overall matches 1 run function entities:processes/mythical_cleric/hardmode

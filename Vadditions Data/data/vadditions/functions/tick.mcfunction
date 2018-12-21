@@ -14,7 +14,7 @@ tag @e[type=minecraft:item,tag=!VADS_Random,nbt={Item:{id:"minecraft:dark_oak_sa
 tag @e[tag=!VADS_Random,tag=VADS_BonsaiPot] add VADS_Random
 tag @e[tag=!VADS_Random,tag=VADS_SandExtractor] add VADS_Random
 tag @e[tag=!VADS_Random,tag=VADS_Field] add VADS_Random
-tag @e[tag=!VADS_Random,type=minecraft:creeper] add VADS_Random
+tag @e[type=minecraft:creeper,tag=!VADS_Random] add VADS_Random
     #eats <food>
 tag @e[type=minecraft:pig,tag=!VADS_EatsCarrots] add VADS_EatsCarrots
 tag @e[type=minecraft:rabbit,tag=!VADS_EatsCarrots] add VADS_EatsCarrots
@@ -66,18 +66,18 @@ tag @e[tag=VADS_IsSprite,tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
 tag @e[type=minecraft:villager,tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
 tag @a[tag=!VADS_NoWeaponDamage] add VADS_NoWeaponDamage
     #undead
-tag @e[tag=!VADS_Undead,type=minecraft:drowned] add VADS_Undead
-tag @e[tag=!VADS_UndeadButImmune,type=minecraft:enderman] add VADS_UndeadButImmune
-tag @e[tag=!VADS_Undead,type=minecraft:husk] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:phantom] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:skeleton] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:skeleton_horse] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:stray] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:wither_skeleton] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:zombie] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:zombie_horse] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:zombie_pigman] add VADS_Undead
-tag @e[tag=!VADS_Undead,type=minecraft:zombie_villager] add VADS_Undead
+tag @e[type=minecraft:drowned,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:enderman,tag=!VADS_UndeadButImmune] add VADS_UndeadButImmune
+tag @e[type=minecraft:husk,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:phantom,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:skeleton,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:skeleton_horse,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:stray,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:wither_skeleton,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:zombie,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:zombie_horse,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:zombie_pigman,tag=!VADS_Undead] add VADS_Undead
+tag @e[type=minecraft:zombie_villager,tag=!VADS_Undead] add VADS_Undead
 
 #pulse
 scoreboard players add Pulse VADS_Tick 1
@@ -203,7 +203,7 @@ scoreboard players add @e[tag=VADS_WeaponEntity] VADS_WpnRngdTm 1
 scoreboard players add @a[scores={VADS_ItemCool=..109}] VADS_ItemCool 1
 scoreboard players add @e[tag=VADS_FreezeStand,scores={VADS_FreezeTimer=..45}] VADS_FreezeTimer 1
 scoreboard players add @e[tag=VADS_ConfusedEffect] VADS_CnfsedTime 1
-scoreboard players add @e[type=!minecraft:item,type=!minecraft:player,tag=!VADS_Entity] VADS_Age 1
+scoreboard players add @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_Entity] VADS_Age 1
 scoreboard players set @a[scores={VADS_DeathCheck=1..}] VADS_DeathCheck 0
 
 execute as @a[scores={VADS_ItemCool=15}] at @s run playsound minecraft:entity.bat.loop player @a ~ ~ ~ 1 2

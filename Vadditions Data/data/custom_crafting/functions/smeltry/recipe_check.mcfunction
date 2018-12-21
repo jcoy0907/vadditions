@@ -1,4 +1,5 @@
 #@s = custom crafter unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]}
+#called by custom_crafting:clock
 
 #pre
 execute store result score @s VADS_FrstStckSze run data get block ~ ~ ~ Items[0].Count

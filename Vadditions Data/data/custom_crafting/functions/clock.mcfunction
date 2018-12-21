@@ -1,9 +1,8 @@
+#@s - console
+#called by #custom_crafting:clock
+
 #validity check
 execute as @e[tag=VADS_CustomCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true]{Items:[]} run function custom_crafting:recipe_validity_check
-
-#reset stack sizes/slot count on empty crafters
-execute as @e[tag=VADS_CustomCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{}]} run scoreboard players set @s[scores={VADS_SlotCount=1..}] VADS_SlotCount 0
-execute as @e[tag=VADS_CustomCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{}]} run scoreboard players set @s[scores={VADS_StackSize=1..}] VADS_StackSize 0
 
 #run recipe checks
 execute as @e[tag=VADS_BasicCrafter] at @s unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[]} unless block ~ ~ ~ #vadditions:holds/custom_crafter[triggered=true] run function custom_crafting:basic/recipe_check

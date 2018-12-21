@@ -1,4 +1,4 @@
-#@s - @e[tag=!VADS_FoundMob,type=!minecraft:player]
+#@s - @e[type=!minecraft:player,tag=!VADS_FoundMob]
 #called by mobs:tick
 
 tag @s[type=minecraft:creeper,tag=!VADS_FoundMob] add VADS_ReplaceMob

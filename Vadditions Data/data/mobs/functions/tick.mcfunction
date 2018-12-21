@@ -2,4 +2,4 @@
 #called by #mobs:tick
 
 #check for mobs
-execute as @e[tag=!VADS_FoundMob,type=!minecraft:player] run function mobs:spawn/check
+execute if entity @s[type=!minecraft:player,tag=!VADS_FoundMob] run function mobs:spawn/check

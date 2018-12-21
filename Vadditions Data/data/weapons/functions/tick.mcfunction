@@ -5,24 +5,12 @@
     #light
 execute as @e[tag=VADS_LightField,scores={VADS_Random=1..2}] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["VADS_LightField.Particle","VADS_LightFieldEntity"],Silent:1,Invulnerable:1,Invisible:1,Marker:1,Small:1,CustomName:"\"LightField.Particle\""}
 kill @e[tag=VADS_LightField.Particle,nbt={OnGround:1b}]
-execute at @e[tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~ ~ ~ .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~9 ~ ~ .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~-9 ~ ~ .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~ ~ ~9 .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Particle] run particle minecraft:dust 0 0.438 100 1 ~ ~ ~-9 .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Particle] run particle minecraft:enchanted_hit ~ ~ ~ .1 .5 .1 0 2 normal
+execute at @e[tag=VADS_LightField.Particle] run function weapons:light_fields/particle
 execute if score Overall VADS_Random matches 1..30 at @e[tag=VADS_LightField.Particle] run tag @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,tag=!VADS_Passive,distance=..10,sort=random,limit=2] add VADS_LightField.Damage.Normal
 execute if score Overall VADS_Random matches 1..30 at @e[tag=VADS_LightField.Particle] run tag @e[type=!minecraft:player,type=!minecraft:item,tag=!VADS_NoWeaponDamage,tag=VADS_Undead,distance=..10,sort=random,limit=2] add VADS_LightField.Damage.Invert
 tag @e[tag=VADS_LightField.Damage.Normal] add VADS_LightField.Damage
 tag @e[tag=VADS_LightField.Damage.Invert] add VADS_LightField.Damage
-effect give @e[tag=VADS_LightField.Damage.Normal] minecraft:instant_damage 1 0 true
-effect give @e[tag=VADS_LightField.Damage.Invert] minecraft:instant_health 1 0 true
-execute at @e[tag=VADS_LightField.Damage] run particle minecraft:dust 0 0.438 100 2 ~ ~2 ~ .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Damage] run particle minecraft:enchanted_hit ~ ~2 ~ .1 .5 .1 0 2 normal
-execute at @e[tag=VADS_LightField.Damage] run playsound minecraft:block.conduit.attack.target voice @a[distance=..5] ~ ~ ~ 100 1.5 1
-tag @e[tag=VADS_LightField.Damage.Normal] remove VADS_LightField.Damage.Normal
-tag @e[tag=VADS_LightField.Damage.Invert] remove VADS_LightField.Damage.Invert
-tag @e[tag=VADS_LightField.Damage] remove VADS_LightField.Damage
+execute as @e[tag=VADS_LightField.Damage] at @s run function weapons:light_fields/damage
 execute as @e[tag=VADS_LightField] at @s unless block ~ ~ ~ #minecraft:passthrough run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:armor_stand",Count:1b,tag:{display:{Name:"{\"translate\":\"entity.vadditions.field.light\",\"color\":\"aqua\",\"italic\":\"false\"}"},Enchantments:[{id:"minecraft:unbreaking",lvl:1}],HideFlags:1,EntityTag:{id:"minecraft:armor_stand",Tags:["VADS_LightField","VADS_Field","VADS_LightFieldEntity","VADS_Turn","VADS_NoNameMarker"],CustomName:"{\"translate\":\"entity.vadditions.field.light\",\"color\":\"aqua\"}",CustomNameVisible:1,Marker:1,Invisible:1,Invulnerable:1,NoGravity:1,ArmorItems:[{},{},{},{id:"minecraft:sea_lantern",Count:1b}]}}}}
 execute as @e[tag=VADS_LightField] at @s unless block ~ ~ ~ #minecraft:passthrough run kill @s
 
@@ -32,14 +20,7 @@ execute as @e[tag=VADS_LightField] at @s unless block ~ ~ ~ #minecraft:passthrou
 execute at @e[type=minecraft:item,nbt={Item:{tag:{isItem:1b,VADS_Item:"vadditions:sticky_tnt"}},OnGround:1b}] align xz run summon minecraft:tnt ~.5 ~ ~.5 {Fuse:100s,Tags:["VADS_Entity","VADS_CustomTNT","VADS_StickyTNT","VADS_GreenTNT"]}
 execute as @e[type=minecraft:item,nbt={Item:{tag:{isItem:1b,VADS_Item:"vadditions:sticky_tnt"}},OnGround:1b}] run kill @s[type=!minecraft:player]
         #stick
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s unless block ~ ~1 ~ #minecraft:inadhesive run data merge entity @s {NoGravity:1}
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s unless block ~ ~ ~.5 #minecraft:inadhesive run function weapons:stick
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s unless block ~ ~ ~-.5 #minecraft:inadhesive run function weapons:stick
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s unless block ~.5 ~ ~ #minecraft:inadhesive run function weapons:stick
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s unless block ~-.5 ~ ~ #minecraft:inadhesive run function weapons:stick
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s unless block ~ ~ ~-.5 #minecraft:inadhesive run function weapons:stick
-        #unstick
-execute as @e[tag=VADS_StickyTNT,type=minecraft:tnt] at @s if block ~ ~1 ~ #minecraft:inadhesive if block ~ ~ ~.5 #minecraft:inadhesive if block ~ ~ ~-.5 #minecraft:inadhesive if block ~.5 ~ ~ #minecraft:inadhesive if block ~-.5 ~ ~ #minecraft:inadhesive if block ~ ~ ~-.5 #minecraft:inadhesive run data merge entity @s {NoGravity:0}
+execute as @e[type=minecraft:tnt,tag=VADS_StickyTNT] at @s run function entities:processes/sticky_tnt
 
 #ranged weapons
     #cactuthorn
@@ -118,9 +99,9 @@ scoreboard players set @a[scores={VADS_UseCOAS=1..,VADS_ItemCool=100..},nbt={Sel
 execute as @e[tag=VADS_IHDEntity,scores={VADS_WpnRngdTm=600..}] at @s run function weapons:explosions/ihd
 execute as @e[tag=VADS_IHDEntity,scores={VADS_WpnRngdTm=600..}] run kill @s[type=!minecraft:player]
         #teleportation
-execute as @e[tag=VADS_IHDEntity.Front,scores={VADS_WpnRngdTm=0..59}] at @s facing entity @e[sort=nearest,limit=1,distance=..20,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,nbt=!{Health:1.0f},type=!minecraft:player] feet run teleport @s ^ ^ ^1 ~ ~
-execute as @e[tag=VADS_IHDEntity.Front,scores={VADS_WpnRngdTm=60..119}] at @s facing entity @e[sort=nearest,limit=1,distance=..20,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,nbt=!{Health:1.0f},type=!minecraft:player] feet run teleport @s ^ ^ ^.5 ~ ~
-execute as @e[tag=VADS_IHDEntity.Front,scores={VADS_WpnRngdTm=120..}] at @s facing entity @e[sort=nearest,limit=1,distance=..20,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,nbt=!{Health:1.0f},type=!minecraft:player] feet run teleport @s ^ ^ ^.2 ~ ~
+execute as @e[tag=VADS_IHDEntity.Front,scores={VADS_WpnRngdTm=0..59}] at @s facing entity @e[type=!minecraft:player,sort=nearest,limit=1,distance=..20,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,nbt=!{Health:1.0f}] feet run teleport @s ^ ^ ^1 ~ ~
+execute as @e[tag=VADS_IHDEntity.Front,scores={VADS_WpnRngdTm=60..119}] at @s facing entity @e[type=!minecraft:player,sort=nearest,limit=1,distance=..20,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,nbt=!{Health:1.0f}] feet run teleport @s ^ ^ ^.5 ~ ~
+execute as @e[tag=VADS_IHDEntity.Front,scores={VADS_WpnRngdTm=120..}] at @s facing entity @e[type=!minecraft:player,sort=nearest,limit=1,distance=..20,tag=!VADS_NoWeaponDamage,tag=!VADS_Undead,nbt=!{Health:1.0f}] feet run teleport @s ^ ^ ^.2 ~ ~
         #visuals
 execute as @e[tag=VADS_IHDEntity.Front] at @s run particle minecraft:smoke ~ ~ ~ .001 .001 .001 .1 10
 execute as @e[tag=VADS_IHDEntity.Front] at @s run particle minecraft:block minecraft:black_concrete ~ ~ ~ 0 0 0 .8 10

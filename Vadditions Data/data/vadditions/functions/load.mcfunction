@@ -82,7 +82,8 @@ execute unless score LoadedOnce VADS_Overall matches 1 run gamerule commandBlock
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule logAdminCommands false
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule disableElytraMovementCheck true
 #add teams
-team add VADS_NoCollision {"translate":"text.team.vadditions.nocollision"}
+team add VADS_NoCollision
+team modify VADS_NoCollision displayName {"translate":"text.team.vadditions.nocollision"}
 team modify VADS_NoCollision seeFriendlyInvisibles false
 team modify VADS_NoCollision friendlyFire false
 team modify VADS_NoCollision collisionRule never
@@ -97,8 +98,8 @@ execute if score VersionNum-Builds VADS_Overall matches 0.. run scoreboard playe
 execute unless score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall if score VersionNum-Builds VADS_Overall matches 0.. run tellraw @a {"translate":"text.vadditions.new_build_system","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
     #store build number
 scoreboard players operation BuildNumber.Prev VADS_Overall = BuildNumber VADS_Overall
-    #update current build number
-scoreboard players set BuildNumber VADS_Overall 25
+    #update current build number (MODIFY BUILD COUNT HERE)
+scoreboard players set BuildNumber VADS_Overall 26
     #if updating, send update message
 execute unless score VersionNum-Builds VADS_Overall matches 0.. if score BuildNumber.Prev VADS_Overall < BuildNumber VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
     #if downdating, send warning message

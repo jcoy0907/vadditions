@@ -1,7 +1,16 @@
 CHANGELOG
 =========
 
-# v1.0.0.1-r (build 25)
+# v1.0.2.0-r (build 26)
+## Bugs (1)
+- Transanium lasers would not spawn in due to a file being renamed, but the related function command not being renamed
+## Changes (4)
+- Performance improvements (thanks to Misode)
+- Changed 'HOW_TO_UPDATE.md'
+- Made a few bug fixes clearer below
+- Removed unnecessary functions
+
+# v1.0.1.0-r (build 25)
 ## Bugs (3)
 - The freezing enchant would not display particles
 - There was an error in the compressor creation function
@@ -18,7 +27,7 @@ CHANGELOG
 - Changed and updated custom crafter creation checks and removal functions (check GitHub compare in 'custom_crafting:clock' for changes)
 - Improved elevator mechanics
 - Elevators now make a noise when used
-- Renamed bossbar 'vadditions:status/bosshealth/white_castle_master' to 'vadditions:boss_health/white_castle_master'
+- Renamed boss bar 'vadditions:status/bosshealth/white_castle_master' to 'vadditions:boss_health/white_castle_master'
 
 # v1.0.0.0-r (build 24)
 ## Bugs (18)
@@ -26,16 +35,16 @@ CHANGELOG
 - All 'VADS_IsSprite' entities didn't have the 'VADS_NoWeaponDamage' tag
 - The Staff of Unsightbereness would use the Staff of Levitation's texture
 - Saplings planting themselves and mythical cleric processing called non-existent functions and wouldn't work
-- If a skeleton or husk spawned in the desert, they wouldn't spawn properly
+- If a skeleton or husk spawned in the desert, they wouldn't kill themselves and then spawn on loop
 - Skeletons and witches spawning in jungle biomes would say 'I've spawned' in the chat
 - Switching away from holding an item that has a cooldown while an item is cooling down would flash the actionbar
-- Freeze attacks would affect players in creative/spectator 
+- Freeze attacks would affect players in creative/spectator
 - Damaging minecarts would run when a minecart was stationary
 - Compressors would run if there was a block above itself
 - Bonsai pots would check for 'minecraft:grass_block' instead of '#vadditions:holds/sapling'
-- The IHD now only affects the target entity
-- Fixed splash text typos
-- Removed the item recharge bossbar as it wasn't multiplayer friendly
+- The IHD now only affects the target entity instead of nearby entities
+- Fixed a splash text typo
+- Removed the item recharge boss bar as it wasn't multiplayer friendly
 - Sticky TNT didn't have the 'VADS_Entity' tag
 - If a basic crafter was next to an advanced crafter it would remove itself
 - You could easily spawn two basic crafters on top of each other
@@ -68,7 +77,7 @@ CHANGELOG
 - Renamed some custom dye craft recipes
 - Removed easier armour crafts
 - Moved 'enchants:tick' commands to 'vadditions:tick'
-- Removed unnessecary arguments in custom item models
+- Removed unnecessary arguments in custom item models
 - Organised custom item model arguments in the resource pack
 - Updated the link that the changelog message takes you to to be lower-case 'vadditions' as the link has changed
 - 'VADS_[weapon]EntityFront' and 'VADS_[weapon]EntityFollow' tags are now 'VADS_[weapon]Entity.Front' and 'VADS_[weapon]Entity.Follow' (e.g. 'VADS_CactuthornEntityFront' to 'VADS_CactuthornEntity.Front')

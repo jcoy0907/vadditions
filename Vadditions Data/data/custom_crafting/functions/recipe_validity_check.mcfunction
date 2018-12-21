@@ -33,8 +33,3 @@ execute if score @s VADS_SlotCount matches 9.. store result score @s VADS_StackS
 execute if score @s VADS_SlotCount matches 9.. unless score @s VADS_StackSize = @s VADS_FrstStckSze run scoreboard players set @s VADS_FrstStckSze 0
 
 execute if score @s VADS_FrstStckSze matches 1.. run scoreboard players operation @s VADS_StackSize = @s VADS_FrstStckSze
-
-#check if one of the recipes succeeded
-execute if score @s VADS_StackSize matches 1.. if block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{tag:{vadditions_customcrafters:{}}}]} run function custom_crafting:apply_multiplier
-#check unless one of the recipes succeeded
-execute if score @s VADS_StackSize matches 1.. unless block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{tag:{vadditions_customcrafters:{}}}]} run function custom_crafting:check_original

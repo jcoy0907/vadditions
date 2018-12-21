@@ -13,12 +13,4 @@ execute as @e[tag=VADS_CustomCrafter] at @s store result score @s VADS_TagCount 
 execute as @e[tag=VADS_CustomCrafter,scores={VADS_TagCount=0}] at @s if block ~ ~ ~ #vadditions:holds/custom_crafter{Items:[{tag:{}}]} run data remove block ~ ~ ~ Items[0].tag
 
 #fire check
-execute as @e[tag=VADS_BasicCrafter] at @s unless block ~ ~1 ~ minecraft:fire unless block ~1 ~ ~ minecraft:fire unless block ~-1 ~ ~ minecraft:fire unless block ~ ~ ~1 minecraft:fire unless block ~ ~ ~-1 minecraft:fire unless block ~ ~-1 ~ minecraft:fire run scoreboard players reset @s VADS_CCFire
-execute as @e[tag=VADS_BasicCrafter] at @s if block ~ ~1 ~ minecraft:fire run scoreboard players add @s VADS_CCFire 1
-execute as @e[tag=VADS_BasicCrafter] at @s if block ~ ~-1 ~ minecraft:fire run scoreboard players add @s VADS_CCFire 1
-execute as @e[tag=VADS_BasicCrafter] at @s if block ~1 ~ ~ minecraft:fire run scoreboard players add @s VADS_CCFire 1
-execute as @e[tag=VADS_BasicCrafter] at @s if block ~-1 ~ ~ minecraft:fire run scoreboard players add @s VADS_CCFire 1
-execute as @e[tag=VADS_BasicCrafter] at @s if block ~ ~ ~1 minecraft:fire run scoreboard players add @s VADS_CCFire 1
-execute as @e[tag=VADS_BasicCrafter] at @s if block ~ ~ ~-1 minecraft:fire run scoreboard players add @s VADS_CCFire 1
-execute as @e[tag=VADS_BasicCrafter,scores={VADS_CCFire=1..}] run data merge entity @s {Marker:0b}
-execute at @e[tag=VADS_BasicCrafter,scores={VADS_CCFire=60..}] run setblock ~ ~ ~ minecraft:air destroy
+execute as @e[tag=VADS_BasicCrafter] at @s run function custom_crafting:basic/fire_check
