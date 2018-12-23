@@ -19,6 +19,5 @@ etc.
 ### Environment
 <!--- Where did you find this issue? Please give relevant details on your environment. -->
 <!--- Was it in singleplayer, or multiplayer? -->
-<!--- Do you have other modules installed (please list them)? -->
 <!--- What version of the game are you using? -->
 <!--- etc. -->
