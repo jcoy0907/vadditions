@@ -1,24 +1,24 @@
----
-name: Bug report
-about: Create a report to help us improve
+<!--- Provide a short general summary of the issue in the title above -->
 
----
+### Expected Behavior
+<!--- Tell us what should happen -->
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+### Current Behavior
+<!--- Tell us what happens instead of the expected behavior -->
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### Possible Solution
+<!--- If you can, suggest a fix for this issue, not required -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### Steps to Reproduce
+<!--- Provide a video or image example, or a set of steps to reproduce this issue -->
+1.
+2.
+3.
+etc.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Additional context**
-Add any other context about the problem here.
+### Environment
+<!--- Where did you find this issue? Please give relevant details on your environment. -->
+<!--- Was it in singleplayer, or multiplayer? -->
+<!--- Do you have other modules installed (please list them)? -->
+<!--- What version of the game are you using? -->
+<!--- etc. -->
