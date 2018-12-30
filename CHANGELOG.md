@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+# v1.0.3.0-r (build 28)
+## Bugs (2)
+- Fixed the function clock
+- Fixed bonsai pots
+
 # v1.0.2.1-r (build 27)
 ## Changes (2)
 - Minor performance edits
