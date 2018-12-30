@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+# v1.0.2.1-r (build 27)
+## Changes (2)
+- Minor performance edits
+- Removed and renamed a few functions
+
 # v1.0.2.0-r (build 26)
 ## Bugs (1)
 - Transanium lasers would not spawn in due to a file being renamed, but the related function command not being renamed

@@ -98,14 +98,12 @@ execute if score VersionNum-Builds VADS_Overall matches 0.. run scoreboard playe
 execute unless score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall if score VersionNum-Builds VADS_Overall matches 0.. run tellraw @a {"translate":"text.vadditions.new_build_system","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
     #store build number
 scoreboard players operation BuildNumber.Prev VADS_Overall = BuildNumber VADS_Overall
-    #update current build number (MODIFY BUILD COUNT HERE)
-scoreboard players set BuildNumber VADS_Overall 26
+    #update current build number ***MODIFY BUILD COUNT HERE***
+scoreboard players set BuildNumber VADS_Overall 27
     #if updating, send update message
 execute unless score VersionNum-Builds VADS_Overall matches 0.. if score BuildNumber.Prev VADS_Overall < BuildNumber VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
     #if downdating, send warning message
-execute if score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall run tellraw @a {"translate":"text.vadditions.downdate","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
-execute if score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall run datapack disable "file/Vadditions Data"
-execute if score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall run scoreboard players operation BuildNumber VADS_Overall = BuildNumber.Prev VADS_Overall
+execute if score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall run function build:downdating
     #remove fake players
 scoreboard players reset BuildNumber.Prev VADS_Overall
 scoreboard players reset VersionNum-Builds VADS_Overall
