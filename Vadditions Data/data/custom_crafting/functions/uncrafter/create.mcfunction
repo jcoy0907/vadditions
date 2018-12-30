@@ -7,7 +7,7 @@ summon minecraft:armor_stand ~.5 ~-.5 ~.5 {ArmorItems:[{},{},{},{id:"minecraft:d
 setblock ~ ~-1 ~ minecraft:air
 setblock ~ ~-1 ~ minecraft:dispenser[facing=up]{CustomName:"{\"translate\":\"block.vadditions.customcrafter.uncrafter\"}"}
 #activate hardmode if the criterion is met
-execute unless score Hardmode VADS_Overall matches 1 run if block ~ ~2 ~ minecraft:obsidian run function hardmode:activate
+execute unless score Hardmode VADS_Overall matches 1 if block ~ ~2 ~ minecraft:obsidian run function hardmode:activate
 #audiovisuals
 playsound minecraft:block.enchantment_table.use voice @a[distance=..16] ~ ~ ~ 100 0 1
 playsound minecraft:entity.wither.spawn voice @a[distance=..16] ~ ~ ~ 100 0 1
