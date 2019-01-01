@@ -5,7 +5,7 @@
     #effect players and mobs near endermen
 execute at @e[type=minecraft:enderman] run function entities:processes/enderman_support_class
 #armour stand modifications
-execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s run function entities:processes/armour_stand_modifications
+execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s run function entities:processes/armour_stand_modifications/run
 #firey arrows
 execute at @e[type=minecraft:arrow,scores={VADS_Fire=1..},nbt={inGround:1b},tag=!VADS_FiredArrow] run setblock ~ ~ ~ minecraft:fire keep
 tag @e[type=minecraft:arrow,scores={VADS_Fire=1..},nbt={inGround:1b},tag=!VADS_FiredArrow] add VADS_FiredArrow

@@ -9,4 +9,5 @@ execute as @e[tag=VADS_OreEntity,tag=VADS_OreTransanium,scores={VADS_Random=1..2
 #run room spawning
 execute as @e[tag=VADS_SpawnRoom] at @s run function #structures:spawn_rooms
 #fill layer
-execute at @a[nbt=!{Dimension:1}] if block ~ 0 ~ minecraft:bedrock run function structures:spawn/fill_layer
+execute at @a[nbt=!{Dimension:1},nbt=!{Dimension:-1}] if block ~ 0 ~ minecraft:bedrock run function structures:spawn/fill_layer
+execute at @a[nbt=!{Dimension:1},nbt=!{Dimension:-1}] if block ~ 0 ~ minecraft:obsidian run function structures:spawn/replace_obsidian

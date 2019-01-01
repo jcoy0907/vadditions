@@ -1,6 +1,6 @@
-execute store success score FillLayer VADS_SuccessChck run fill ~50 0 ~50 ~-50 0 ~-50 minecraft:obsidian replace minecraft:bedrock
+execute store success score FillLayer VADS_SuccessChck run fill ~50 0 ~50 ~-50 0 ~-50 minecraft:barrier replace minecraft:bedrock
 fill ~63 1 ~63 ~ 1 ~ minecraft:air replace minecraft:gold_ore
-fill ~-63 1 ~-63 ~ 1 ~ minecraft:air replace minecraft:gold_ore 
+fill ~-63 1 ~-63 ~ 1 ~ minecraft:air replace minecraft:gold_ore
 fill ~63 1 ~-63 ~ 1 ~ minecraft:air replace minecraft:gold_ore
 fill ~-63 1 ~63 ~ 1 ~ minecraft:air replace minecraft:gold_ore
 

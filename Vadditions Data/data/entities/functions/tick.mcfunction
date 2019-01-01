@@ -50,10 +50,10 @@ tag @a[tag=VADS_UnderwaterEffect.1] remove VADS_UnderwaterEffect.1
 tag @a[tag=VADS_UnderwaterEffect.2] remove VADS_UnderwaterEffect.2
 tag @a[tag=VADS_UnderwaterEffect.3] remove VADS_UnderwaterEffect.3
 
-tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_BubbleDef=200..275}] add VADS_UnderwaterEffect.0
-tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_BubbleDef=100..199}] add VADS_UnderwaterEffect.1
-tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_BubbleDef=0..99}] add VADS_UnderwaterEffect.2
-tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_BubbleDef=-20..0}] add VADS_UnderwaterEffect.3
+tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_Air=200..275}] add VADS_UnderwaterEffect.0
+tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_Air=100..199}] add VADS_UnderwaterEffect.1
+tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_Air=0..99}] add VADS_UnderwaterEffect.2
+tag @a[nbt=!{Inventory:[{Slot:103b,tag:{Enchantments:[{id:"minecraft:aqua_affinity"}]}}]},gamemode=!creative,gamemode=!spectator,scores={VADS_Air=-20..0}] add VADS_UnderwaterEffect.3
 
 effect give @a[tag=VADS_UnderwaterEffect.0] minecraft:weakness 1 0
 effect give @a[tag=VADS_UnderwaterEffect.1] minecraft:weakness 1 1

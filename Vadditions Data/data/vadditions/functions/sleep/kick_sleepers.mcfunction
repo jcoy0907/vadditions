@@ -8,4 +8,6 @@ execute unless entity @s[nbt={Sleeping:1b}] if entity @a[nbt={Sleeping:1b}] run 
 execute unless entity @a[nbt={Sleeping:1b}] run tellraw @s {"translate":"text.vadditions.kicked_all_sleeping.no_sleepers","color":"red"}
 execute if entity @s[nbt={Sleeping:1b}] run tellraw @s {"translate":"text.vadditions.kicked_all_sleeping.sleeping_player_clicked","color":"red"}
 #kick sleepers
-execute unless entity @s[nbt={Sleeping:1b}] at @a[nbt={Sleeping:1b}] run summon minecraft:snowball ~ ~.6 ~
+execute unless entity @s[nbt={Sleeping:1b}] at @a[nbt={Sleeping:1b},gamemode=!creative,gamemode=!spectator] run summon minecraft:snowball ~ ~.6 ~
+#reset score
+scoreboard players reset @s VADS_KickSleep

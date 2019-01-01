@@ -84,8 +84,9 @@ scoreboard players add Pulse VADS_Tick 1
 execute if score Pulse VADS_Tick >= PulseTick VADS_Tick run function #vadditions:clock
 execute if score Pulse VADS_Tick >= PulseTick VADS_Tick run scoreboard players set Pulse VADS_Tick 0
 
-#gamerules
-gamerule sendCommandFeedback true
+#multiplayer sleeping
+execute as @a[scores={VADS_KickSleep=1}] run function vadditions:sleep/kick_sleepers
+scoreboard players enable @a VADS_KickSleep
 
 #initial
 tellraw @a[tag=!VADS_JoinedOnce] [{"translate":"text.vadditions.chat.firstjoin"},{"text":"\n"},{"translate":"text.vadditions.chat.firstjoin.warning"}]
@@ -129,7 +130,7 @@ kill @e[type=minecraft:item,nbt={Item:{tag:{vadditions:{visual_item:1b}}}}]
 execute as @e[tag=VADS_FireStand,scores={VADS_Fire=..10}] run data merge entity @s {Invulnerable:1,Marker:1,Fire:20s}
 #fire notification
 execute as @a run scoreboard players operation @s VADS_FireSecond = @s VADS_Fire
-execute as @a run scoreboard players operation @s VADS_FireSecond /= TickSecond VADS_Independent
+execute as @a run scoreboard players operation @s VADS_FireSecond /= TickSecond VADS_Time
 title @a[scores={VADS_Fire=-19..-1},gamemode=!creative,gamemode=!spectator] actionbar [{"translate":"text.vadditions.actionbar.firestatus.time"}," ",{"translate":"text.vadditions.actionbar.firestatus.pre"}]
 execute as @a[scores={VADS_Fire=1..},gamemode=!creative,gamemode=!spectator] run title @s actionbar [{"translate":"text.vadditions.actionbar.firestatus.time"}," ",{"score":{"objective":"VADS_FireSecond","name":"@s"}},{"translate":"text.vadditions.actionbar.firestatus.second"}]
 tag @a[scores={VADS_Fire=1..},tag=VADS_NotOnFire] remove VADS_NotOnFire
@@ -159,7 +160,6 @@ execute as @e[type=minecraft:tnt] store result score @s VADS_Fuse run data get e
 execute as @e[type=minecraft:item] store result score @s VADS_Age run data get entity @s Age
 execute as @e store result score @s VADS_Fire run data get entity @s Fire
 execute as @e store result score @s VADS_Pos.Y run data get entity @s Pos[1]
-execute as @e[type=minecraft:experience_orb] store result score @s VADS_XPOrbValue run data get entity @s Value
 execute store result score Daytime VADS_Overall run time query daytime
     #weapons
 execute as @a[scores={VADS_ItemCool=0..99}] run title @s actionbar [{"translate":"text.item.recharging.colon"}," ",{"score":{"objective":"VADS_ItemCool","name":"@s"},"color":"dark_red"},{"color":"dark_red","text":"%"}]
