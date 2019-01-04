@@ -34,7 +34,7 @@ Credits
     		- More stone pickaxe crafts [andesite, diorite, granite, stone along with cobblestone]
     		- Clay blocks -> Clay
 	- Terraria?!
-		- (Cactuthorn, from the Vilethorn)
+		- All piercing ranged weapons, the mechanic was taken from the `Vilethorn` (see where `Cactuthorn` came from?)
 
 - Command Help
 	- Sparks from Gamemode4 - Custom crafting alignment, removing shadow from custom crafters, help with stackable crafting
