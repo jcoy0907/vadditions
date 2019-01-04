@@ -1,4 +1,4 @@
-README
+Vadditions [![Latest release](https://img.shields.io/github/release/Mojang/DataFixerUpper.svg)](https://github.com/AndanteDevs/vadditions/releases/latest) [![License](https://img.shields.io/github/license/Mojang/DataFixerUpper.svg)](https://github.com/AndanteDevs/vadditions/blob/master/LICENSE)
 ======
 
 - Thank you for installing `Vadditions (Vanilla Additions)` into your Minecraft world!
