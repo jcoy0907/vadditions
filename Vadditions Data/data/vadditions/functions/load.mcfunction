@@ -85,7 +85,7 @@ execute unless score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall if
     #store build number
 scoreboard players operation BuildNumber.Prev VADS_Overall = BuildNumber VADS_Overall
     #update current build number ***MODIFY BUILD COUNT HERE***
-scoreboard players set BuildNumber VADS_Overall 29
+scoreboard players set BuildNumber VADS_Overall 30
     #if updating, send update message
 execute unless score VersionNum-Builds VADS_Overall matches 0.. if score BuildNumber.Prev VADS_Overall < BuildNumber VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
     #if downdating, send warning message

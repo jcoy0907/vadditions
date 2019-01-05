@@ -22,8 +22,8 @@ execute unless entity @e[tag=VADS_WhiteCastleMaster,limit=1] run bossbar set vad
 execute at @e[tag=VADS_WhiteCastleMaster] run bossbar set vadditions:boss_health/white_castle_master players @a[distance=..10]
 execute at @e[tag=VADS_WhiteCastleMaster] run execute at @p store result bossbar vadditions:boss_health/white_castle_master value run data get entity @e[tag=VADS_WhiteCastleMaster,sort=nearest,limit=1] Health
     #models
-execute as @e[tag=!VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{Damage:20s,Unbreakable:1}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
-execute as @e[tag=VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{Damage:21s,Unbreakable:1}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
+execute as @e[tag=!VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{CustomModelData:20}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
+execute as @e[tag=VADS_Moving,tag=VADS_WhiteCastleMaster] run data merge entity @s {ArmorItems:[{},{},{},{Count:1b,id:iron_hoe,tag:{CustomModelData:21}}],ArmorDropChances:[0.085F,0.085F,0.085F,-327.67F]}
 #effects
     #attribute modifiers
         #l1
@@ -122,8 +122,8 @@ execute as @e[type=minecraft:creeper,scores={VADS_CreeperTime=21..30}] run data 
 execute as @e[type=minecraft:turtle,nbt={HasEgg:1b},nbt=!{CustomName:"{\"text\":\"Expecting...\"}"}] run data merge entity @s {CustomNameVisible:1,CustomName:"{\"text\":\"Expecting...\"}"}
 execute as @e[type=minecraft:turtle,nbt={HasEgg:0b,CustomName:"{\"text\":\"Expecting...\"}"}] run data merge entity @s {CustomNameVisible:0,CustomName:""}
 
-    # Easymode Processes
-execute as @e[type=minecraft:villager,tag=!VADS_VillageProcessed,tag=!VADS_MythicalCleric] if score Hardmode VADS_Overall matches 0 run function entities:processes/mythical_cleric/easymode
-
-    # Hardmode Processes
-execute as @e[type=minecraft:villager,tag=!VADS_VillageProcessed,tag=!VADS_MythicalCleric] if score Hardmode VADS_Overall matches 1 run function entities:processes/mythical_cleric/hardmode
+    #mythical clerics
+execute as @e[type=minecraft:villager,tag=!VADS_ForceSpawn,tag=!VADS_VillageProcessed,tag=!VADS_MythicalCleric] if score Hardmode VADS_Overall matches 0 run function entities:processes/mythical_cleric/easymode
+execute as @e[type=minecraft:villager,tag=!VADS_ForceSpawn,tag=!VADS_VillageProcessed,tag=!VADS_MythicalCleric] if score Hardmode VADS_Overall matches 1 run function entities:processes/mythical_cleric/hardmode
+execute as @e[type=minecraft:villager,tag=VADS_ForceSpawn,tag=!VADS_ForceSpawnProcessed,tag=VADS_MythicalCleric] if score Hardmode VADS_Overall matches 0 run function entities:processes/mythical_cleric/force_spawn/easymode
+execute as @e[type=minecraft:villager,tag=VADS_ForceSpawn,tag=!VADS_ForceSpawnProcessed,tag=VADS_MythicalCleric] if score Hardmode VADS_Overall matches 1 run function entities:processes/mythical_cleric/force_spawn/hardmode

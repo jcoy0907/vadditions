@@ -3,10 +3,10 @@
   "group": "green_dye",
   "ingredients": [
     {
-      "item": "minecraft:dandelion_yellow"
+      "item": "minecraft:yellow_dye"
     },
     {
-        "item": "minecraft:cactus_green"
+        "item": "minecraft:green_dye"
     }
   ],
   "result": {

@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+# v1.1.0.0-r (build 30)
+## Bug fixes (1)
+- Removed duplicate recipes
+## Changes (6)
+- Updated to 1.14
+    - Modified bonsai pots for 1.14
+    - Updated dye names
+    - Updated profession tags on villagers
+    - Removed certain recipe packs
+- Added racks (replaced and upgraded item frames)
+- Improved shields (better resolution and colours)
+- Streamlined mythical cleric spawning - mythical clerics in dungeons should now spawn again
+- Changed all `tag=VADS_...` to `type=#vadditions:ENTITY_TYPE`
+- Changed all `Unbreaking:1b` and `Damage:#` to `CustomModelData:#` values
+
 # v1.0.4.0-r (build 29)
 ## Bug fixes (1)
 - Fixed multiplayer sleeping
@@ -9,14 +24,14 @@ CHANGELOG
 - Removed Nether bedrock replacement
 - World generation mechanics now set the bedrock layer to barriers, not obsidian
 - Renamed advancement `Teeny Weeny` (`vadditions:pose`) to `Pretty Posing`
-- Renamed `Bugs` to `Bug Fixes` in `CHANGELOG.md` because it makes more sense
+- Renamed `Bugs` to `Bug fixes` in `CHANGELOG.md` because it makes more sense
 - Removed unnecessary objectives
 - Renamed objective `VADS_BubbleDef` to `VADS_Air`
 - Modified how the `sendCommandFeedback` gamerule is set
 - Performance improvements
 
 # v1.0.3.0-r (build 28)
-## Bug Fixes (2)
+## Bug fixes (2)
 - Fixed the function clock
 - Fixed bonsai pots
 
@@ -26,7 +41,7 @@ CHANGELOG
 - Removed and renamed a few functions
 
 # v1.0.2.0-r (build 26)
-## Bug Fixes (1)
+## Bug fixes (1)
 - Transanium lasers would not spawn in due to a file being renamed, but the related function command not being renamed
 ## Changes (4)
 - Performance improvements (thanks to Misode)
@@ -35,7 +50,7 @@ CHANGELOG
 - Removed unnecessary functions
 
 # v1.0.1.0-r (build 25)
-## Bug Fixes (3)
+## Bug fixes (3)
 - The freezing enchant would not display particles
 - There was an error in the compressor creation function
 - Creating Retfarcnu would convert the dispenser into a dropper
@@ -54,7 +69,7 @@ CHANGELOG
 - Renamed boss bar `vadditions:status/bosshealth/white_castle_master` to `vadditions:boss_health/white_castle_master`
 
 # v1.0.0.0-r (build 24)
-## Bug Fixes (18)
+## Bug fixes (18)
 - Custom block fire brightness checks were in the clock instead of the tick
 - All `VADS_IsSprite` entities didn't have the `VADS_NoWeaponDamage` tag
 - The Staff of Unsightbereness would use the Staff of Levitation's texture
@@ -145,7 +160,7 @@ CHANGELOG
 - Changed a lot of `force` arguments in particle commands to `normal`
 
 # v0.3.5.0-r (build 23)
-## Bug Fixes (1)
+## Bug fixes (1)
 - Removed unnessecary scoreboards
 ## Changes (7)
 - Revised tags again
@@ -190,7 +205,7 @@ OLD CHANGELOG
 - **    : Can include than one type of block/item (e.g. ice can be packed ice, blue ice etc.)`
 
 # v0.3.4.0-r (build 20)
-## Bug Fixes
+## Bug fixes
   Pigs no longer follow players with disguised right-click checks            (gen.)             #012
    (e.g. weapons use a carrot on a stick to detect right-clicking)
   `English (United States)` lang file is now valid again                     (err: lang)        #011
@@ -229,7 +244,7 @@ OLD CHANGELOG
   Ores now generate in random formations                                     (wgen.)
 
 # v0.3.3.0-r (build 19)
-## Bug Fixes
+## Bug fixes
   You wouldn't get a `You`re not on fire anymore!` message when getting in   (err.)             #006
    to water on fire.
   Added missing lang strings                                                 (lang)             #005
@@ -249,14 +264,14 @@ OLD CHANGELOG
   Added horses to the `eats wheat` tag category                              (gen.)
 
 # v0.3.2.0-r (build 18)
-## Bug Fixes
+## Bug fixes
   Sticky TNT would not stick due to a missing tag [#minecraft:inadhesive]    (err.)             #004
 ## Changes
   Enhanced performance [moved all weapon ticks into one function]            (lag)
   Re-added `#minecraft:glazed_terracotta` tag                                (re-a.)
 
 # v0.3.1.0-r (build 17)
-## Bug Fixes
+## Bug fixes
   Fixed hardened ice in an uncrafter via sandstone slabs                     (err.)             #003
   Fixed sand in an uncrafter via hardened ice                                (err.)             #002
   Added missing lang strings in scoreboards and teams                        (lang)             #001

@@ -1,0 +1,28 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "block/command_block"
+    },
+        "overrides": [
+                { "predicate": {"custom_model_data": 1}, "model": "vadditions:block/ores/transanium"},
+                { "predicate": {"custom_model_data": 2}, "model": "vadditions:item/ores/transanium"},
+                { "predicate": {"custom_model_data": 3}, "model": "vadditions:block/lazers/core"},
+                { "predicate": {"custom_model_data": 4}, "model": "vadditions:block/lazers/transanium"},
+
+                { "predicate": {"custom_model_data": 5}, "model": "vadditions:block/explosives/tnt/sticky"},
+
+                { "predicate": {"custom_model_data": 6}, "model": "vadditions:block/custom_crafters/basic"},
+                { "predicate": {"custom_model_data": 7}, "model": "vadditions:block/custom_crafters/advanced"},
+                { "predicate": {"custom_model_data": 8}, "model": "vadditions:block/custom_crafters/machine"},
+                { "predicate": {"custom_model_data": 9}, "model": "vadditions:block/custom_crafters/uncrafter"},
+                { "predicate": {"custom_model_data": 10}, "model": "vadditions:block/custom_crafters/smeltry"},
+                { "predicate": {"custom_model_data": 11}, "model": "vadditions:block/custom_crafters/compressor"},
+
+                { "predicate": {"custom_model_data": 12}, "model": "vadditions:block/bonsai_pot/empty"},
+                { "predicate": {"custom_model_data": 13}, "model": "vadditions:block/bonsai_pot/filled_1"},
+                { "predicate": {"custom_model_data": 14}, "model": "vadditions:block/bonsai_pot/filled_2"},
+
+                { "predicate": {"custom_model_data": 15}, "model": "vadditions:block/sand_extractor"},
+                { "predicate": {"custom_model_data": 16}, "model": "vadditions:item/sand_extractor"}
+        ]
+}

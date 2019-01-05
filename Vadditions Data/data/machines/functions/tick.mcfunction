@@ -28,7 +28,7 @@ execute at @e[scores={VADS_FrzUseTimer=180..198},tag=VADS_LazerBottom,tag=VADS_T
     #aesthetics
 #execute at @e[type=minecraft:guardian,tag=VADS_LazerTop] if entity @e[type=minecraft:item,distance=..1,nbt={Item:{id:"minecraft:redstone_torch"}}] run kill @e[type=minecraft:item,distance=..1,nbt={Item:{id:"minecraft:redstone_torch"}}]
 #execute at @e[type=minecraft:guardian,tag=VADS_LazerTop] run summon minecraft:item ~ ~.5 ~ {Item:{id:"minecraft:redstone_torch",Count:1},PickupDelay:40s,Tags:["VADS_VisualEntity"]}
-execute at @e[type=minecraft:guardian,tag=VADS_LazerTop] if entity @e[gamemode=!creative,gamemode=!spectator,distance=..1,tag=!VADS_NoWeaponDamage,tag=!VADS_Lazer] run function machines:lazers/damage_entities
+execute at @e[type=minecraft:guardian,tag=VADS_LazerTop] if entity @e[gamemode=!creative,gamemode=!spectator,distance=..1,type=!#vadditions:no_weapon_damage,tag=!VADS_Lazer] run function machines:lazers/damage_entities
 
 execute at @e[tag=VADS_LazerBottom] run particle minecraft:dolphin ~ ~ ~ .5 .5 .5 0 10 normal @a[distance=..10]
 

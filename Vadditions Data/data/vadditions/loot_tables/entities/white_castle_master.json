@@ -33,12 +33,12 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:golden_axe",
+                    "name": "minecraft:diamond_sword",
                     "weight": 1,
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{Unbreakable:1,Damage:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.transanium_sword\\\"}\"},Enchantments:[{id:\"minecraft:sharpness\",lvl:1},{id:\"minecraft:knockback\",lvl:5},{id:\"vadditions:freezing\",lvl:1}],HideFlags:1,isWeapon:1b,hasCooldown:1b,VADS_Weapon:\"vadditions:transanium_sword\",hasCustomEnchant:1b}"
+                            "tag": "{CustomModelData:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.transanium_sword\\\"}\"},Enchantments:[{id:\"minecraft:sharpness\",lvl:1},{id:\"minecraft:knockback\",lvl:5},{id:\"vadditions:freezing\",lvl:1}],HideFlags:1,isWeapon:1b,hasCooldown:1b,VADS_Weapon:\"vadditions:transanium_sword\",hasCustomEnchant:1b}"
                         }
                     ]
                 }

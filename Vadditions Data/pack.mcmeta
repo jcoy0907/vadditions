@@ -1,71 +1,7 @@
 {
     "pack": {
         "pack_format": 0,
-        "name": [
-            {
-                "text": "Vadditions ",
-                "color": "dark_green"
-            },
-            {
-                "text": "data",
-                "color": "gray"
-            }
-        ],
-        "description": [
-            {
-                "text": "The official ",
-                "color": "gray"
-            },
-            {
-                "text": "Vadditions ",
-                "color": "dark_green"
-            },
-            {
-                "text": "data pack",
-                "color": "gray"
-            },
-            {
-                "text": "\n",
-                "__comment": "new_line"
-            },
-            {
-                "text": "Customizing vanilla",
-                "color": "gray"
-            },
-            {
-                "text": "\n",
-                "__comment": "new_line"
-            },
-            {
-                "text": "Minecraft 1.13+",
-                "color": "dark_gray"
-            }
-        ],
-        "credits": [
-            {
-                "id": "andante",
-                "name": "Andante",
-                "nickname": "Dan",
-                "role": "Pack Concept and Creator"
-            },
-            {
-                "id": "misode",
-                "name": "Misode",
-                "nickname": "",
-                "role": "Lag Reduction Help"
-            },
-            {
-                "id": "sparks",
-                "name": "Sparks",
-                "nickname": "",
-                "role": "Command Help and Ideas"
-            },
-            {
-                "id": "vazkii",
-                "name": "Vazkii",
-                "nickname": "",
-                "role": "Ideas"
-            }
-        ]
+        "name": "Vadditions Data",
+        "description": "&7Customising Vanilla\n§8Minecraft 1.14+"
     }
 }

@@ -10,7 +10,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{Processed:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.staff.levitation\\\"}\",Lore:[\"§7Type: §cStaff\",\"§7Tier:  §a1\",\"\",\"§7Attributes:\",\" §8Levitation\"]},HideFlags:1,VADS_Staff:\"vadditions:staff.levitation\",weaponAttributes:[\"levitation.1\"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.0d,Slot:\"mainhand\",AttributeName:\"generic.attackDamage\",Operation:0,Name:\"attackDamage\"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:\"mainhand\",AttributeName:\"generic.attackSpeed\",Operation:0,Name:\"attackSpeed\"}],Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+                            "tag": "{Processed:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.staff.levitation\\\"}\",Lore:[\"\\\"§7Type: §cStaff\\\"\",\"\\\"§7Tier:  §a1\\\"\",\"\\\"\\\"\",\"\\\"§7Attributes:\\\"\",\"\\\" §8Levitation\\\"\"]},HideFlags:1,VADS_Staff:\"vadditions:staff.levitation\",weaponAttributes:[\"levitation.1\"],isStaff:1b,hasCooldown:1b,CustomModelData:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:1.0d,Slot:\"mainhand\",AttributeName:\"generic.attackDamage\",Operation:0,Name:\"attackDamage\"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:\"mainhand\",AttributeName:\"generic.attackSpeed\",Operation:0,Name:\"attackSpeed\"}],Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
                         }
                     ]
                 },
@@ -21,7 +21,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{Processed:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.staff.levitation\\\"}\",Lore:[\"§7Type: §cStaff\",\"§7Tier:  §e2\",\"\",\"§7Attributes:\",\" §8Levitation\"]},HideFlags:1,VADS_Staff:\"vadditions:staff.levitation\",weaponAttributes:[\"levitation.2\"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:2.0d,Slot:\"mainhand\",AttributeName:\"generic.attackDamage\",Operation:0,Name:\"attackDamage\"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:\"mainhand\",AttributeName:\"generic.attackSpeed\",Operation:0,Name:\"attackSpeed\"}],Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+                            "tag": "{Processed:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.staff.levitation\\\"}\",Lore:[\"\\\"§7Type: §cStaff\\\"\",\"\\\"§7Tier:  §e2\\\"\",\"\\\"\\\"\",\"\\\"§7Attributes:\\\"\",\"\\\" §8Levitation\\\"\"]},HideFlags:1,VADS_Staff:\"vadditions:staff.levitation\",weaponAttributes:[\"levitation.2\"],isStaff:1b,hasCooldown:1b,CustomModelData:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:2.0d,Slot:\"mainhand\",AttributeName:\"generic.attackDamage\",Operation:0,Name:\"attackDamage\"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:\"mainhand\",AttributeName:\"generic.attackSpeed\",Operation:0,Name:\"attackSpeed\"}],Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
                         }
                     ]
                 },
@@ -32,7 +32,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{Processed:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.staff.levitation\\\"}\",Lore:[\"§7Type: §cStaff\",\"§7Tier:  §63\",\"\",\"§7Attributes:\",\" §8Levitation\"]},HideFlags:1,VADS_Staff:\"vadditions:staff.levitation\",weaponAttributes:[\"levitation.3\"],isStaff:1b,hasCooldown:1b,Unbreakable:1,Damage:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:3.0d,Slot:\"mainhand\",AttributeName:\"generic.attackDamage\",Operation:0,Name:\"attackDamage\"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:\"mainhand\",AttributeName:\"generic.attackSpeed\",Operation:0,Name:\"attackSpeed\"}],Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+                            "tag": "{Processed:1,display:{Name:\"{\\\"translate\\\":\\\"item.vadditions.staff.levitation\\\"}\",Lore:[\"\\\"§7Type: §cStaff\\\"\",\"\\\"§7Tier:  §63\\\"\",\"\\\"\\\"\",\"\\\"§7Attributes:\\\"\",\"\\\" §8Levitation\\\"\"]},HideFlags:1,VADS_Staff:\"vadditions:staff.levitation\",weaponAttributes:[\"levitation.3\"],isStaff:1b,hasCooldown:1b,CustomModelData:5,AttributeModifiers:[{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:3.0d,Slot:\"mainhand\",AttributeName:\"generic.attackDamage\",Operation:0,Name:\"attackDamage\"},{UUIDMost:-8835796243302889736L,UUIDLeast:-6201521201042469775L,Amount:-2.6d,Slot:\"mainhand\",AttributeName:\"generic.attackSpeed\",Operation:0,Name:\"attackSpeed\"}],Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
                         }
                     ]
                 }
