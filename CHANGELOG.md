@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-# v1.1.0.0-r (build 30)
+# v1.1.0.0-pre1 (build 30)
 ## Bug fixes (1)
 - Removed duplicate recipes
 ## Changes (6)
