@@ -8,7 +8,7 @@ CHANGELOG
 - Updated to 1.14
     - Modified bonsai pots for 1.14
     - Updated dye names
-    - Updated profession tags on villagers
+    - Updated profession NBT on villagers
     - Removed certain recipe packs
 - Added racks (replaced and upgraded item frames)
 - Improved shields (better resolution and colours)
