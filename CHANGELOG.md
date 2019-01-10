@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+# v1.1.0.0-pre2 (build 31)
+## Bug Fixes (3)
+- Command blocks no longer have missing texture icons
+- Custom crafters drop an item when broken again
+- Ores no longer spawn two entities in one block
+
 # v1.1.0.0-pre1 (build 30)
 ## Bug fixes (1)
 - Removed duplicate recipes

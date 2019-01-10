@@ -8,5 +8,3 @@ data merge block ~ ~ ~ {RequiredPlayerRange:0s}
 #ensure of no overlapping
 execute align xyz run kill @e[tag=VADS_OreEntity,dx=.5,dy=.5,dz=.5]
 execute align xyz run summon minecraft:armor_stand ~.5 ~.5 ~.5 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["VADS_Entity","VADS_OreEntity","VADS_OreTransanium","VADS_FoundMob"],Small:1b,Silent:1b,Marker:1b,CustomName:"{\"text\":\"vadditions:ores/transanium\"}",ArmorItems:[{},{},{},{id:"minecraft:command_block",Count:1b,tag:{CustomModelData:1}}]}
-#spawn ore entity
-execute align xyz run summon minecraft:armor_stand ~.5 ~.5 ~.5 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["VADS_Entity","VADS_OreEntity","VADS_OreTransanium","VADS_FoundMob"],Small:1b,Silent:1b,Marker:1b,CustomName:"{\"text\":\"vadditions:ores/transanium\"}",ArmorItems:[{},{},{},{id:"minecraft:command_block",Count:1b,tag:{CustomModelData:1}}]}

@@ -1,6 +1,8 @@
 #@s - console
 #called by #entities:tick
 
+#lingering potion bubbling
+execute at @e[type=minecraft:area_effect_cloud,tag=!VADS_Entity,scores={VADS_Random=1}] run playsound minecraft:block.brewing_stand.brew player @a[distance=..15] ~ ~ ~ .5 0 1
 #observer notification stands
 execute as @e[type=minecraft:armor_stand,tag=!VADS_Entity] at @s run function entities:processes/observer_notification_stands
 #illusioner loot table

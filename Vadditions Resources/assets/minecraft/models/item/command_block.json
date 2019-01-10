@@ -1,8 +1,5 @@
 {
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "block/command_block"
-    },
+    "parent": "block/command_block",
         "overrides": [
                 { "predicate": {"custom_model_data": 1}, "model": "vadditions:block/ores/transanium"},
                 { "predicate": {"custom_model_data": 2}, "model": "vadditions:item/ores/transanium"},

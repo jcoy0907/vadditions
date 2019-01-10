@@ -1,8 +1,6 @@
 {
     "textures": {
-        "0": "vadditions:block/ores/transanium",
-        "1": "vadditions:block/ores/transanium",
-        "2": "vadditions:block/ores/transanium"
+        "ore": "vadditions:block/ores/transanium"
     },
     "elements": [
         {
@@ -10,12 +8,12 @@
             "from": [ 0.0, 0.0, 0.0 ], 
             "to": [ 16.0, 16.0, 16.0 ], 
             "faces": {
-                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
-                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
-                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
-                "west": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
-                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
-                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+                "north": { "texture": "#ore", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#ore", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#ore", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#ore", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#ore", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#ore", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
             }
         }
     ],"display": {

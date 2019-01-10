@@ -62,7 +62,6 @@ scoreboard objectives add VADS_BPDirtCount dummy {"translate":"text.scoreboard.v
 scoreboard objectives add VADS_ExtrctrCnt dummy {"translate":"text.scoreboard.vadditions.sandextractorcount"}
 
 #gamerules and other general commands
-recipe give @a *
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule commandBlockOutput false
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule logAdminCommands false
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule disableElytraMovementCheck true
@@ -85,7 +84,7 @@ execute unless score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall if
     #store build number
 scoreboard players operation BuildNumber.Prev VADS_Overall = BuildNumber VADS_Overall
     #update current build number ***MODIFY BUILD COUNT HERE***
-scoreboard players set BuildNumber VADS_Overall 30
+scoreboard players set BuildNumber VADS_Overall 31
     #if updating, send update message
 execute unless score VersionNum-Builds VADS_Overall matches 0.. if score BuildNumber.Prev VADS_Overall < BuildNumber VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
     #if downdating, send warning message
