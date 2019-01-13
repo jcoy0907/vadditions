@@ -14,7 +14,7 @@ execute as @e[type=minecraft:snowball,tag=!VADS_DamagedSnowball] at @s run funct
 scoreboard players add @e[tag=VADS_WhiteCastleMaster] VADS_FrzUseTimer 1
 scoreboard players set @e[tag=VADS_WhiteCastleMaster,scores={VADS_FrzUseTimer=200..}] VADS_FrzUseTimer 0
 execute at @e[scores={VADS_FrzUseTimer=199},tag=VADS_WhiteCastleMaster] if entity @p[distance=..10,gamemode=!spectator,gamemode=!creative,nbt=!{ActiveEffects:[{Id:14b}]}] run function visual:run/freeze
-execute at @e[scores={VADS_FrzUseTimer=180..198},tag=VADS_WhiteCastleMaster] if entity @p[distance=..10,gamemode=!spectator,gamemode=!creative,nbt=!{ActiveEffects:[{Id:14b}]}] run function visual:entity/charge_up
+execute at @e[scores={VADS_FrzUseTimer=180..198},tag=VADS_WhiteCastleMaster] if entity @p[distance=..10,gamemode=!spectator,gamemode=!creative,nbt=!{ActiveEffects:[{Id:14b}]}] run function visual:charge_up
     #sounds
 execute as @e[tag=VADS_WhiteCastleMaster,tag=!VADS_RanSound,scores={VADS_Random=1..20}] at @s run playsound vadditions:mob/white_castle_master/ambient ambient @a[distance=..16] ~ ~ ~ 100 2 1
 execute as @e[tag=VADS_WhiteCastleMaster,tag=!VADS_RanSound,scores={VADS_Random=1..20}] run tag @s add VADS_RanSound

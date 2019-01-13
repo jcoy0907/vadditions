@@ -1,4 +1,4 @@
-#@s - bonsai pot if score @s VADS_Random3 matches 1..5 unless block ~ ~ ~ #vadditions:holds/bonsai_pot[enabled=false] if block ~ ~2 ~ minecraft:grass_block if block ~ ~3 ~ #minecraft:saplings
+#@s - bonsai pot if score @s VADS_Random matches 1..5 unless block ~ ~ ~ #vadditions:holds/bonsai_pot[enabled=false] if block ~ ~2 ~ minecraft:grass_block if block ~ ~3 ~ #minecraft:saplings
 #called by machines:tick
 
 #visuals

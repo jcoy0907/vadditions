@@ -10,6 +10,10 @@ playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~
 playsound minecraft:entity.zombie_villager.converted voice @a[distance=..16] ~ ~ ~ 2 2 1
 playsound minecraft:entity.evoker_fangs.attack voice @a[distance=..16] ~ ~ ~ 2 0 1
 
+effect give @a[distance=..4,gamemode=!creative,gamemode=!spectator] minecraft:slowness 1 100
+effect give @a[distance=..4,gamemode=!creative,gamemode=!spectator] minecraft:jump_boost 1 128 true
+effect give @a[distance=..4,gamemode=!creative,gamemode=!spectator] minecraft:wither 2 2
+
 summon minecraft:evoker_fangs ~4 ~ ~
 summon minecraft:evoker_fangs ~-4 ~ ~
 summon minecraft:evoker_fangs ~ ~ ~4

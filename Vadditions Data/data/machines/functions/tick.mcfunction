@@ -9,14 +9,13 @@ execute as @e[tag=VADS_BonsaiPot] at @s run function machines:bonsai_pots/tick
     #removal check
 execute as @e[tag=VADS_SandExtractor] at @s unless block ~ ~.2 ~ #vadditions:holds/sand_extractor run function machines:sand_extractors/remove
     #extraction check
-execute as @e[tag=VADS_SandExtractor,scores={VADS_Random3=1..10}] at @s unless block ~ ~ ~ #vadditions:holds/sand_extractor[enabled=false] if block ~ ~1.2 ~ #minecraft:sand run function machines:sand_extractors/extract
+execute as @e[tag=VADS_SandExtractor,scores={VADS_Random=1..10}] at @s unless block ~ ~ ~ #vadditions:holds/sand_extractor[enabled=false] if block ~ ~1.2 ~ #minecraft:sand run function machines:sand_extractors/extract
 
 #lazers
     #kill checks
 execute as @e[tag=VADS_LazerBottom] at @s unless entity @e[tag=VADS_LazerTop,distance=...75,sort=nearest,limit=1] run function machines:lazers/kill/incorrect
 execute as @e[type=minecraft:guardian,tag=VADS_LazerTop] at @s unless entity @e[tag=VADS_LazerBottom,distance=...75,sort=nearest,limit=1] run function machines:lazers/kill/incorrect
 
-execute as @e[tag=VADS_Lazer] at @s if block ~ ~-1 ~ #minecraft:air run function machines:lazers/kill/manual/transanium
 execute as @e[tag=VADS_Lazer] at @s unless block ~ ~ ~ #vadditions:holds/lazer run function machines:lazers/kill/manual/transanium
     #summon check
 execute as @e[type=minecraft:item,tag=!VADS_NoSummon,nbt={Item:{tag:{VADS_Machine:"vadditions:lazer.transanium",isMachine:1b}},OnGround:1b}] at @s run function machines:lazers/create/transanium
@@ -24,7 +23,7 @@ execute as @e[type=minecraft:item,tag=!VADS_NoSummon,nbt={Item:{tag:{VADS_Machin
 scoreboard players add @e[tag=VADS_LazerBottom,tag=VADS_TransaniumLazer] VADS_FrzUseTimer 1
 scoreboard players set @e[tag=VADS_LazerBottom,tag=VADS_TransaniumLazer,scores={VADS_FrzUseTimer=200..}] VADS_FrzUseTimer 0
 execute at @e[scores={VADS_FrzUseTimer=199},tag=VADS_LazerBottom,tag=VADS_TransaniumLazer] if entity @p[distance=..10,gamemode=!spectator,gamemode=!creative,nbt=!{ActiveEffects:[{Id:14b}]}] run function visual:run/freeze
-execute at @e[scores={VADS_FrzUseTimer=180..198},tag=VADS_LazerBottom,tag=VADS_TransaniumLazer] if entity @p[distance=..10,gamemode=!spectator,gamemode=!creative,nbt=!{ActiveEffects:[{Id:14b}]}] run function visual:entity/charge_up
+execute at @e[scores={VADS_FrzUseTimer=180..198},tag=VADS_LazerBottom,tag=VADS_TransaniumLazer] if entity @p[distance=..10,gamemode=!spectator,gamemode=!creative,nbt=!{ActiveEffects:[{Id:14b}]}] run function visual:charge_up
     #aesthetics
 #execute at @e[type=minecraft:guardian,tag=VADS_LazerTop] if entity @e[type=minecraft:item,distance=..1,nbt={Item:{id:"minecraft:redstone_torch"}}] run kill @e[type=minecraft:item,distance=..1,nbt={Item:{id:"minecraft:redstone_torch"}}]
 #execute at @e[type=minecraft:guardian,tag=VADS_LazerTop] run summon minecraft:item ~ ~.5 ~ {Item:{id:"minecraft:redstone_torch",Count:1},PickupDelay:40s,Tags:["VADS_VisualEntity"]}

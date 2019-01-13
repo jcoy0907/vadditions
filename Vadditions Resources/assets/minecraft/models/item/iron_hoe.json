@@ -6,30 +6,9 @@
         "overrides": [
                 { "predicate": {"custom_model_data": 1}, "model": "vadditions:item/stones/mythical"},
                 { "predicate": {"custom_model_data": 2}, "model": "vadditions:item/tools/natura"},
-
-                { "predicate": {"custom_model_data": 3}, "model": "vadditions:item/glass_shards/normal"},
-                { "predicate": {"custom_model_data": 4}, "model": "vadditions:item/glass_shards/orange"},
-                { "predicate": {"custom_model_data": 5}, "model": "vadditions:item/glass_shards/magenta"},
-                { "predicate": {"custom_model_data": 6}, "model": "vadditions:item/glass_shards/light_blue"},
-                { "predicate": {"custom_model_data": 7}, "model": "vadditions:item/glass_shards/yellow"},
-                { "predicate": {"custom_model_data": 8}, "model": "vadditions:item/glass_shards/lime"},
-                { "predicate": {"custom_model_data": 9}, "model": "vadditions:item/glass_shards/pink"},
-                { "predicate": {"custom_model_data": 10}, "model": "vadditions:item/glass_shards/gray"},
-                { "predicate": {"custom_model_data": 11}, "model": "vadditions:item/glass_shards/light_gray"},
-                { "predicate": {"custom_model_data": 12}, "model": "vadditions:item/glass_shards/cyan"},
-                { "predicate": {"custom_model_data": 13}, "model": "vadditions:item/glass_shards/purple"},
-                { "predicate": {"custom_model_data": 14}, "model": "vadditions:item/glass_shards/blue"},
-                { "predicate": {"custom_model_data": 15}, "model": "vadditions:item/glass_shards/brown"},
-                { "predicate": {"custom_model_data": 16}, "model": "vadditions:item/glass_shards/green"},
-                { "predicate": {"custom_model_data": 17}, "model": "vadditions:item/glass_shards/red"},
-                { "predicate": {"custom_model_data": 18}, "model": "vadditions:item/glass_shards/black"},
-                { "predicate": {"custom_model_data": 19}, "model": "vadditions:item/glass_shards/white"},
-
+            
                 { "predicate": {"custom_model_data": 20}, "model": "vadditions:mob/white_castle_master/still"},
                 { "predicate": {"custom_model_data": 21}, "model": "vadditions:mob/white_castle_master/moving"},
-
-                { "predicate": {"custom_model_data": 22}, "model": "vadditions:item/staffs/stand"},
-
                 { "predicate": {"custom_model_data": 23}, "model": "vadditions:mob/plurker"}
         ]
 }

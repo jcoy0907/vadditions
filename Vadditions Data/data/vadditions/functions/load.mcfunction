@@ -12,8 +12,6 @@ scoreboard objectives add VADS_Overall dummy {"translate":"text.scoreboard.vaddi
 
 scoreboard objectives add VADS_Random dummy {"translate":"text.scoreboard.vadditions.random"}
 scoreboard objectives add VADS_Random2 dummy {"translate":"text.scoreboard.vadditions.random2"}
-scoreboard objectives add VADS_Random3 dummy {"translate":"text.scoreboard.vadditions.random"}
-scoreboard objectives add VADS_Random4 dummy {"translate":"text.scoreboard.vadditions.random2"}
 
 scoreboard objectives add VADS_Tick dummy {"translate":"text.scoreboard.vadditions.tick"}
 scoreboard objectives add VADS_WpnRngdTm dummy {"translate":"text.scoreboard.vadditions.rangedtime"}
@@ -42,7 +40,6 @@ scoreboard objectives add VADS_DeathCheck minecraft.custom:minecraft.deaths {"tr
 scoreboard objectives add VADS_Swim minecraft.custom:minecraft.swim_one_cm {"translate":"text.scoreboard.vadditions.swim_one_cm"}
 scoreboard objectives add VADS_SquidKills minecraft.killed:minecraft.squid {"translate":"text.scoreboard.vadditions.squidkills"}
 scoreboard objectives add VADS_LeaveGame minecraft.custom:minecraft.leave_game {"translate":"text.scoreboard.vadditions.leavegame"}
-scoreboard objectives add VADS_Pos.Y dummy {"translate":"text.scoreboard.vadditions.position.y"}
 scoreboard objectives add VADS_KickSleep trigger {"translate":"text.scoreboard.vadditions.run_sleep"}
 
 scoreboard objectives add VADS_CheckBiome dummy {"translate":"text.scoreboard.vadditions.checkbiome"}
@@ -62,8 +59,6 @@ scoreboard objectives add VADS_BPDirtCount dummy {"translate":"text.scoreboard.v
 scoreboard objectives add VADS_ExtrctrCnt dummy {"translate":"text.scoreboard.vadditions.sandextractorcount"}
 
 #gamerules and other general commands
-execute unless score LoadedOnce VADS_Overall matches 1 run gamerule commandBlockOutput false
-execute unless score LoadedOnce VADS_Overall matches 1 run gamerule logAdminCommands false
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule disableElytraMovementCheck true
 execute unless score LoadedOnce VADS_Overall matches 1 run gamerule sendCommandFeedback false
 #add teams
@@ -77,21 +72,10 @@ bossbar add vadditions:boss_health/white_castle_master {"translate":"text.bossba
 bossbar set vadditions:boss_health/white_castle_master max 750
 bossbar set vadditions:boss_health/white_castle_master color blue
 bossbar set vadditions:boss_health/white_castle_master style notched_20
-#update messages
-    #check for the new build system
-execute if score VersionNum-Builds VADS_Overall matches 0.. run scoreboard players operation BuildNumber VADS_Overall = VersionNum-Builds VADS_Overall
-execute unless score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall if score VersionNum-Builds VADS_Overall matches 0.. run tellraw @a {"translate":"text.vadditions.new_build_system","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
-    #store build number
-scoreboard players operation BuildNumber.Prev VADS_Overall = BuildNumber VADS_Overall
-    #update current build number ***MODIFY BUILD COUNT HERE***
-scoreboard players set BuildNumber VADS_Overall 31
-    #if updating, send update message
-execute unless score VersionNum-Builds VADS_Overall matches 0.. if score BuildNumber.Prev VADS_Overall < BuildNumber VADS_Overall run tellraw @a {"translate":"text.vadditions.update","clickEvent":{"action":"open_url","value":"https://github.com/AndanteDevs/vadditions/releases"}}
-    #if downdating, send warning message
-execute if score BuildNumber.Prev VADS_Overall > BuildNumber VADS_Overall run function build:downdating
-    #remove fake players
-scoreboard players reset BuildNumber.Prev VADS_Overall
-scoreboard players reset VersionNum-Builds VADS_Overall
+
+#update checks
+function vadditions:server_version_check
+function vadditions:build/check
 
 #initial scores
 scoreboard players set Random2 VADS_Random2 100011001

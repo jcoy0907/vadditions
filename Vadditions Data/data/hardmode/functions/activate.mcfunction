@@ -12,4 +12,4 @@ playsound minecraft:block.note_block.pling record @a
 #notify server of hardmode activation
 scoreboard players set Hardmode VADS_Overall 1
 #run deaths nearby
-execute unless entity @s[type=minecraft:player] as @a[distance=...5,gamemode=!creative,gamemode=!spectator] run function death:hardmode_activation
+execute unless entity @s[type=minecraft:player] as @a[distance=..1,gamemode=!creative,gamemode=!spectator] run function death:hardmode_activation

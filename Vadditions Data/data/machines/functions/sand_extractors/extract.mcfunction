@@ -1,4 +1,4 @@
-#@s - sand extractor if score @s VADS_Random3 matches 1..5 unless block ~ ~ ~ #vadditions:holds/sand_extractor[enabled=false] if block ~ ~1 ~ #minecraft:sand
+#@s - sand extractor if score @s VADS_Random matches 1..5 unless block ~ ~ ~ #vadditions:holds/sand_extractor[enabled=false] if block ~ ~1 ~ #minecraft:sand
 #called by machines:tick
 #check for loot
     #materials

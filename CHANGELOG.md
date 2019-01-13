@@ -1,6 +1,23 @@
 CHANGELOG
 =========
 
+# v1.1.0.0-pre3 (build 32)
+## Bug Fixes (2)
+- Standing on top of an uncrafter when you activated hardmode would not kill you
+- Fixed entity attack charge up
+## Changes (9)
+- Custom crafter breakage now uses block loot tables
+- Removed glass shards in favour of simpler hammers
+    - You now use a hammer on glass like you would break any other block
+    - Hammers now use block loot tables
+- Advanced crafters have a structured recipe
+- Sand extractors now have a recipe that makes sense
+- Moved all compressor recipe loot tables from `/compressor/` to `/compressor/compression/`
+- Moved `visual/entity:charge_up.mcfunction` to `visual:charge_up.mcfunction`
+- Removed `VADS_Random3` and `VADS_Random4`
+- Modified build checks
+- Reduced the amount of times NBT is read in a tick
+
 # v1.1.0.0-pre2 (build 31)
 ## Bug Fixes (3)
 - Command blocks no longer have missing texture icons

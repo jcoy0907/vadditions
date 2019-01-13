@@ -20,6 +20,8 @@
                 { "predicate": {"custom_model_data": 14}, "model": "vadditions:block/bonsai_pot/filled_2"},
 
                 { "predicate": {"custom_model_data": 15}, "model": "vadditions:block/sand_extractor"},
-                { "predicate": {"custom_model_data": 16}, "model": "vadditions:item/sand_extractor"}
+                { "predicate": {"custom_model_data": 16}, "model": "vadditions:item/sand_extractor"},
+            
+                { "predicate": {"custom_model_data": 17}, "model": "vadditions:item/staffs/stand"}
         ]
 }
