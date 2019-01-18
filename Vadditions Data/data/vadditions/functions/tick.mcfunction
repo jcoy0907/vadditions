@@ -41,9 +41,6 @@ execute as @e[type=minecraft:ender_dragon,tag=!VADS_LootTableProcessed] run data
 tag @e[type=minecraft:ender_dragon,tag=!VADS_LootTableProcessed] add VADS_LootTableProcessed
 
 #patches
-    #new advancement ids
-advancement grant @a[advancements={minecraft:adventure/eat_fish=true}] only minecraft:adventure/eat_cooked_fish
-advancement revoke @a[advancements={minecraft:adventure/eat_fish=true}] only minecraft:adventure/eat_fish
     #visual entities
 execute at @e[type=minecraft:item,nbt={Item:{tag:{isMachine:1b,VADS_Machine:"vadditions:lazer.transanium"}}}] run kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:redstone_torch"}},distance=..3,tag=VADS_VisualEntity]
     #marker

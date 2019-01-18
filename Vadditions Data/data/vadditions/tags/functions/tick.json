@@ -1,16 +1,16 @@
 {
     "values": [
-        "#custom_crafting:tick",
-        "#death:tick",
-        "#entities:tick",
-        "#hardmode:tick",
-        "#machines:tick",
-        "#mobs:tick",
-        "#staffs:tick",
-        "#structures:tick",
-        "#tools:tick",
-        "#visual:tick",
-        "#weapons:tick",
+        "#vadditions:modules/custom_crafting/tick",
+        "#vadditions:modules/death/tick",
+        "#vadditions:modules/entities/tick",
+        "#vadditions:modules/hardmode/tick",
+        "#vadditions:modules/machines/tick",
+        "#vadditions:modules/mobs/tick",
+        "#vadditions:modules/staffs/tick",
+        "#vadditions:modules/structures/tick",
+        "#vadditions:modules/tools/tick",
+        "#vadditions:modules/visual/tick",
+        "#vadditions:modules/weapons/tick",
         "vadditions:tick"
     ]
 }

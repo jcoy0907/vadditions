@@ -1,0 +1,6 @@
+{
+    "values": [
+        "vadditions:modules/custom_crafting/tick",
+        "vadditions:modules/custom_crafting/drops/recipe_check"
+    ]
+}
